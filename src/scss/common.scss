@@ -31,3 +31,37 @@
     letter-spacing: rem(4);
     text-transform: uppercase;
 }
+
+//========================================================================================================================================================
+
+.navigation {
+    display: flex;
+    gap: rem(25);
+    align-items: center;
+    @media (max-width: $mobileSmall) {
+        justify-content: center;
+    }
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $light_04;
+        width: rem(50);
+        height: rem(50);
+        transition: background-color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $gray_01;
+            }
+        }
+        img {
+            max-width: 100%;
+        }
+        &_prev {
+            transform: rotate(-180deg);
+        }
+
+        &_next {
+        }
+    }
+}

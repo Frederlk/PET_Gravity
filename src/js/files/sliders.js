@@ -92,6 +92,42 @@ function initSliders() {
         });
     }
 
+    if (document.querySelector(".slider-services")) {
+        // Указываем скласс нужного слайдера
+        // Создаем слайдер
+        new Swiper(".slider-services", {
+            // Указываем скласс нужного слайдера
+            // Подключаем модули слайдера
+            // для конкретного случая
+            modules: [Navigation, Keyboard],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoHeight: false,
+            speed: 800,
+
+            // Управление клавиатурой
+            keyboard: {
+                // Включить\выключить
+                enabled: true,
+                // Включить\выключить
+                // только когда слайдер
+                // в пределах вьюпорта
+                onlyInViewport: true,
+                // Включить\выключить
+                // управление клавишами
+                // pageUp, pageDown
+                pageUpDown: true,
+            },
+
+            navigation: {
+                prevEl: ".services__navigation .navigation__arrow_prev",
+                nextEl: ".services__navigation .navigation__arrow_next",
+            },
+        });
+    }
+
     // if (document.querySelector(".services__slider")) {
     //     let servicesHome = new Swiper(".services__slider", {
     //         // Эффекты переключения слайдов.
