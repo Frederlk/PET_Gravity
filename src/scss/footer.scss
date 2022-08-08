@@ -38,21 +38,15 @@
 
     &__list {
         display: flex;
-        @include adaptiveValue("gap", 30, 10, 1110, 479.98, 1);
+        @include adaptiveValue("column-gap", 60, 20, 1110, 570, 1);
+        row-gap: rem(10);
         @media (max-width: $tablet) {
             @include adaptiveValue("margin-top", 40, 20, 1110, 479.98, 1);
-            justify-content: center;
         }
         @media (max-width: em(570)) {
             flex-wrap: wrap;
             justify-content: center;
             text-align: center;
-            li {
-                flex: 1 1 100%;
-                &:not(:last-child) {
-                    margin-bottom: rem(10);
-                }
-            }
         }
     }
 
@@ -79,7 +73,6 @@
         @media (max-width: em(570)) {
             @include adaptiveValue("margin-top", 40, 20, 1110, 479.98, 1);
             flex: 1 1 100%;
-            justify-content: center;
         }
         @media (max-width: $mobileSmall) {
             flex-wrap: wrap;
@@ -112,25 +105,19 @@
 .bottom-footer {
     @include adaptiveValue("padding-top", 35, 20, 1110, 479.98, 1);
     @include adaptiveValue("padding-bottom", 35, 20, 1110, 479.98, 1);
-    display: flex;
-    @media (max-width: $mobileSmall) {
-        flex-wrap: wrap;
-        justify-content: center;
+    @media (min-width: $mobileSmall) {
+        display: flex;
     }
     &__list {
         display: flex;
-        flex: 1 1 auto;
-        @include adaptiveValue("gap", 42, 10, 1110, 479.98, 1);
-        li {
-            @media (max-width: $mobileSmall) {
-                flex: 0 1 50%;
-            }
+        @include adaptiveValue("column-gap", 42, 20, 1110, 570, 1);
+        row-gap: rem(10);
+        @media (min-width: $mobileSmall) {
+            flex: 1 1 auto;
         }
         @media (max-width: $mobileSmall) {
-            flex: 1 1 100%;
-            flex-wrap: wrap;
-            text-align: center;
-            margin-bottom: rem(10);
+            justify-content: center;
+            margin-bottom: rem(20);
         }
     }
 
@@ -147,19 +134,22 @@
     }
 
     &__socials {
-        display: flex;
-        align-items: center;
-        gap: rem(15);
+        display: grid;
+        grid-template-columns: repeat(4, rem(24));
+        gap: rem(10);
+        @media (max-width: $mobileSmall) {
+            justify-content: center;
+        }
     }
 
     &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: rem(14);
         color: $white;
         opacity: 0.4;
         transition: opacity 0.3s ease 0s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         @media (any-hover: hover) {
             &:hover {
                 opacity: 1;
