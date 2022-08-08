@@ -1,310 +1,303 @@
 .page-blog {
-   &__topic {
-      @include adaptiv-value("padding-top", 162, 80, 1);
-      @include adaptiv-value("margin-bottom", 135, 50, 1);
-   }
-   &__explore {
-      @include adaptiv-value("margin-bottom", 160, 60, 1);
-   }
+    &__topic {
+        @include adaptiveValue("padding-top", 162, 80, 1110, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 135, 50, 1110, 479.98, 1);
+    }
+    &__explore {
+        @include adaptiveValue("margin-bottom", 160, 60, 1110, 479.98, 1);
+    }
 
-   &__awards {
-      @include adaptiv-value("margin-bottom", 120, 40, 1);
-   }
+    &__awards {
+        @include adaptiveValue("margin-bottom", 120, 40, 1110, 479.98, 1);
+    }
 }
 
 //========================================================================================================================================================
 
 .topic {
-   &__container {
-   }
+    &__container {
+    }
 
-   &__top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      @include adaptiv-value("margin-bottom", 86, 30, 1);
-      @media (max-width: $md3+px) {
-         text-align: center;
-         flex-wrap: wrap;
-         text-align: center;
-      }
-   }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        @include adaptiveValue("margin-bottom", 86, 30, 1110, 479.98, 1);
+        @media (max-width: $mobile) {
+            text-align: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+    }
 
-   &__title {
-      flex: 0 1 540px;
-      @extend .h1;
-      @include adaptiv-value("margin-right", 20, 10, 0);
-      @media (max-width: $md3+px) {
-         flex: 1 1 100%;
-         margin: 0px 0px 20px 0px;
-      }
-   }
+    &__title {
+        flex: 0 1 540px;
+        @extend %h1;
+        @include adaptiveValue("margin-right", 20, 10, 1110, 479.98, 0);
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+            margin: 0px 0px 20px 0px;
+        }
+    }
 
-   &__socials {
-      display: flex;
-      @include adaptiv-value("margin-left", 20, 10, 0);
-      @include adaptiv-value("margin-bottom", 14, 0, 1);
-      @media (max-width: $md3+px) {
-         margin: 0;
-         flex: 1 1 100%;
-         justify-content: center;
-      }
-   }
+    &__socials {
+        display: flex;
+        @include adaptiveValue("margin-left", 20, 10, 1110, 479.98, 0);
+        @include adaptiveValue("margin-bottom", 14, 0, 1110, 479.98, 1);
+        @media (max-width: $mobile) {
+            margin: 0;
+            flex: 1 1 100%;
+            justify-content: center;
+        }
+    }
 
-   &__item {
-      font-size: 14px;
-      color: #222222;
-      margin: 0px 0px 0px 10px;
-      opacity: 1;
-      transition: all 0.3s ease 0s;
-      &::before {
-         color: #222222;
-      }
-      &:first-child {
-         margin: 0;
-      }
-      @media (min-width: $md2+px) {
-         &:hover {
-            opacity: 0.4;
-         }
-      }
-   }
+    &__item {
+        margin: 0px 0px 0px 10px;
+        opacity: 1;
+        transition: all 0.3s ease 0s;
+        &:first-child {
+            margin: 0;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.4;
+            }
+        }
+    }
 
-   &__body {
-   }
+    &__body {
+    }
 
-   &__image {
-      padding: 0px 0px 52.3% 0px;
-      @include adaptiv-value("margin-bottom", 40, 20, 1);
-      @media (max-width: $md3+px) {
-         min-height: 250px;
-      }
-      img {
-      }
-   }
+    &__image {
+        padding: 0px 0px 52.3% 0px;
+        @include adaptiveValue("margin-bottom", 40, 20, 1110, 479.98, 1);
+        @media (max-width: $mobile) {
+            min-height: 250px;
+        }
+    }
 
-   &__text {
-      opacity: 0.7;
-      @extend .text;
-      @media (max-width: $md3+px) {
-         text-align: center;
-      }
-   }
+    &__text {
+        opacity: 0.7;
+        @extend %text;
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
 }
 
 //========================================================================================================================================================
 
 .explore {
-   &__container {
-   }
+    &__container {
+    }
 
-   &__top {
-      display: flex;
-      margin: 0px -15px 15px -15px;
-      @media (max-width: $md3+px) {
-         flex-wrap: wrap;
-         margin: 0px 0px 15px 0px;
-      }
-   }
+    &__top {
+        display: flex;
+        margin: 0px -15px 15px -15px;
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            margin: 0px 0px 15px 0px;
+        }
+    }
 
-   &__column {
-      flex: 0 1 33.333%;
-      padding: 0px 15px;
-      position: relative;
-      margin: 0px 0px 30px 0px;
-      @media (max-width: $md3+px) {
-         flex: 1 1 100%;
-         padding: 0;
-      }
-   }
+    &__column {
+        flex: 0 1 33.333%;
+        padding: 0px 15px;
+        position: relative;
+        margin: 0px 0px 30px 0px;
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+            padding: 0;
+        }
+    }
 
-   &__image {
-      padding: 0px 0px 130% 0px;
-      @media (max-width: $md3+px) {
-         padding: 0;
-         @include adaptiv-value("height", 400, 200, 1);
-      }
-   }
+    &__image {
+        padding: 0px 0px 130% 0px;
+        @media (max-width: $mobile) {
+            padding: 0;
+            @include adaptiveValue("height", 400, 200, 1110, 479.98, 1);
+        }
+    }
 
-   &__gallery-play {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 6;
-      @include adaptiv-font(20, 16, 1);
-      @include adaptiv-value("width", 65, 50, 1);
-      @include adaptiv-value("height", 65, 50, 1);
-      background-color: #fff;
-      top: 50%;
-      left: 50%;
-      cursor: pointer;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s ease 0s;
-      opacity: 1;
-      visibility: visible;
-      &::before {
-         transition: all 0.3s ease 0s;
-      }
-      @media (min-width: $md2+px) {
-         &:hover {
-            background-color: #515151;
-            &::before {
-               color: #fff;
+    &__gallery-play {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 6;
+        @include adaptiveValue("font-size", 20, 16, 1110, 479.98, 1);
+        @include adaptiveValue("width", 65, 50, 1110, 479.98, 1);
+        @include adaptiveValue("height", 65, 50, 1110, 479.98, 1);
+        background-color: $white;
+        top: 50%;
+        left: 50%;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease 0s;
+        opacity: 1;
+        visibility: visible;
+        &::before {
+            transition: all 0.3s ease 0s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $gray_01;
+                &::before {
+                    color: $white;
+                }
             }
-         }
-      }
-   }
+        }
+    }
 
-   &__bottom {
-      display: flex;
-      justify-content: space-between;
-      @media (max-width: $md3+px) {
-         flex-wrap: wrap;
-         justify-content: center;
-      }
-   }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
 
-   &__text {
-      margin: 0px 20px 0px 0px;
-      flex: 0 1 540px;
-      @extend .text;
-      opacity: 0.7;
-      @media (max-width: $md3+px) {
-         flex-wrap: wrap;
-         margin: 0px 0px 20px 0px;
-         text-align: center;
-      }
-   }
+    &__text {
+        margin: 0px 20px 0px 0px;
+        flex: 0 1 540px;
+        @extend %text;
+        opacity: 0.7;
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            margin: 0px 0px 20px 0px;
+            text-align: center;
+        }
+    }
 
-   &__btn {
-      margin: 0px 0px 0px 20px;
-      border: 1px solid #ef8e70;
-      background: #ef8e70;
-      height: 50px;
-      padding: 0px 40px;
-      @extend .label;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      transition: all 0.3s ease 0s;
-      @media (min-width: $md2+px) {
-         &:hover {
-            border: 1px solid #4737ff;
-            background: #4737ff;
-         }
-      }
-      @media (max-width: $md3+px) {
-         margin: 0;
-      }
-   }
+    &__btn {
+        border: 1px solid $secondary_02;
+        background: $secondary_02;
+        height: 50px;
+        padding: 0px 40px;
+        @extend %label;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                border: 1px solid $primary;
+                background: $primary;
+            }
+        }
+
+        @media (min-width: $mobile) {
+            margin-left: rem(20);
+        }
+    }
 }
 
 //========================================================================================================================================================
 
 .awards {
-   &__container {
-      border-top: 1px solid hsla(0, 0%, 13%, 0.2);
-      @include adaptiv-value("padding-top", 60, 30, 1);
-      display: flex;
-      justify-content: space-between;
-      @media (max-width: $md3+px) {
-         justify-content: center;
-         flex-wrap: wrap;
-      }
-   }
+    &__container {
+        border-top: 1px solid hsla(0, 0%, 13%, 0.2);
+        @include adaptiveValue("padding-top", 60, 30, 1110, 479.98, 1);
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: $mobile) {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
 
-   &__column {
-      margin: 0px 20px 0px 0px;
-      &:first-child {
-         flex: 0 1 200px;
-      }
-      @media (max-width: $md3+px) {
-         flex: 1 1 100%;
-         margin: 0px 0px 20px 0px;
-         &:first-child {
+    &__column {
+        margin: 0px 20px 0px 0px;
+        &:first-child {
+            flex: 0 1 200px;
+        }
+        @media (max-width: $mobile) {
             flex: 1 1 100%;
-            text-align: center;
-         }
-         &:last-child {
-            margin: 0px;
-         }
-      }
-   }
+            margin: 0px 0px 20px 0px;
+            &:first-child {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+            &:last-child {
+                margin: 0px;
+            }
+        }
+    }
 
-   &__subtitle {
-      @extend .title;
-   }
+    &__subtitle {
+        @extend %title;
+    }
 }
 .awards-item {
-   margin: 0px 0px 0px 20px;
-   flex: 0 1 635px;
-   @media (max-width: $md3+px) {
-      flex: 1 1 100%;
-   }
-   &__row {
-      display: flex;
-      justify-content: space-between;
-      @include adaptiv-value("margin-bottom", 60, 20, 1);
-      @media (max-width: $md3+px) {
-         &:last-child {
-            margin: 0px 0px 0px 0px;
-         }
-      }
-      @media (max-width: $md4+px) {
-         flex-wrap: wrap;
-      }
-   }
+    margin: 0px 0px 0px 20px;
+    flex: 0 1 635px;
+    @media (max-width: $mobile) {
+        flex: 1 1 100%;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        @include adaptiveValue("margin-bottom", 60, 20, 1110, 479.98, 1);
+        @media (max-width: $mobile) {
+            &:last-child {
+                margin: 0px 0px 0px 0px;
+            }
+        }
+        @media (max-width: $mobileSmall) {
+            flex-wrap: wrap;
+        }
+    }
 
-   &__title {
-      @extend .subtitle;
-      @media (max-width: $md3+px) {
-         flex: 0 0 35%;
-      }
-      @media (max-width: $md4+px) {
-         flex: 1 1 100%;
-         text-align: center;
-         margin: 0px 0px 20px 0px;
-      }
-   }
+    &__title {
+        @extend %subtitle;
+        @media (max-width: $mobile) {
+            flex: 0 0 35%;
+        }
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+            text-align: center;
+            margin: 0px 0px 20px 0px;
+        }
+    }
 
-   &__info {
-      flex: 0 1 255px;
-      margin: 0px 20px 0px 85px;
-      @media (max-width: $md2+px) {
-         margin: 0px 20px;
-      }
-      @media (max-width: $md3+px) {
-         flex: 1 1 auto;
-         text-align: center;
-      }
-      @media (max-width: $md4+px) {
-         flex: 1 1 100%;
-         text-align: center;
-         margin: 0px 0px 20px 0px;
-      }
-   }
+    &__info {
+        flex: 0 1 255px;
+        margin: 0px 20px 0px 85px;
+        @media (max-width: $tablet) {
+            margin: 0px 20px;
+        }
+        @media (max-width: $mobile) {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+            text-align: center;
+            margin: 0px 0px 20px 0px;
+        }
+    }
 
-   &__label {
-      @extend .label;
-      @include adaptiv-value("margin-bottom", 15, 10, 1);
-   }
+    &__label {
+        @extend %label;
+        @include adaptiveValue("margin-bottom", 15, 10, 1110, 479.98, 1);
+    }
 
-   &__text {
-      @extend .text;
-      opacity: 0.7;
-   }
+    &__text {
+        @extend %text;
+        opacity: 0.7;
+    }
 
-   &__year {
-      @extend .text;
-      @media (max-width: $md3+px) {
-         text-align: right;
-         flex: 0 0 10%;
-      }
-      @media (max-width: $md4+px) {
-         flex: 1 1 100%;
-         text-align: center;
-      }
-   }
+    &__year {
+        @extend %text;
+        @media (max-width: $mobile) {
+            text-align: right;
+            flex: 0 0 10%;
+        }
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+            text-align: center;
+        }
+    }
 }

@@ -5,36 +5,36 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 25px;
-    height: 40px;
-    background: #c6b393;
-    transition: all 0.3s ease 0s;
-    color: #fff;
+    padding: 0px rem(25);
+    height: rem(40);
+    background-color: $secondary_01;
+    color: $white;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 24 / 14 * 100%;
+    line-height: math.div(24, 14);
     text-align: center;
-    letter-spacing: 4px;
+    letter-spacing: rem(4);
     text-transform: uppercase;
-    border: 1px solid #c6b393;
+    border: rem(1) solid $secondary_01;
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
     &::after {
-        margin: 0px 0px 0px 10px;
+        margin-left: rem(10);
     }
-    @media (min-width: 992px) {
+    @media (any-hover: hover) {
         &:hover {
             color: rgba(34, 34, 34, 0.5);
-            background: #f5f4ff;
+            background-color: $light_02;
         }
     }
+
     &_blue {
         white-space: nowrap;
-        height: 50px;
-        border: 1px solid #4737ff;
-        background: #4737ff;
-        @media (min-width: $md2+px) {
+        height: rem(50);
+        border: rem(1) solid $primary;
+        background-color: $primary;
+        @media (any-hover: hover) {
             &:hover {
                 background-color: transparent !important;
-                color: #4737ff !important;
+                color: $primary !important;
             }
         }
     }

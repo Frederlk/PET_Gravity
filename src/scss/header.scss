@@ -4,12 +4,12 @@
     position: fixed;
     width: 100%;
     z-index: 100;
-    background-color: #f4f4f4;
+    background-color: $light_01;
     &__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @include adaptiv-value("min-height", 142, 60, 1);
+        @include adaptiveValue("min-height", 142, 60, 1110, 479.98, 1);
         transition: all 0.5s ease 0s;
     }
 
@@ -31,14 +31,14 @@
         top: 50%;
         left: 50%;
         &::after {
-            font-size: 20px;
-            color: #222222;
-            transition: all 0.3s ease 0s;
+            font-size: rem(20);
+            color: $mainColor;
+            transition: color 0.3s ease 0s;
         }
-        @media (min-width: $md2+px) {
+        @media (any-hover: hover) {
             &:hover {
                 &::after {
-                    color: #4737ff;
+                    color: $primary;
                 }
             }
         }
@@ -58,19 +58,19 @@
         top: 0;
         left: 0;
         overflow: auto;
-        background-color: rgba(255, 255, 255, 1);
+        background-color: $white;
         transition: all 0.8s ease 0s;
-        @include adaptiv-value("padding-top", 160, 90, 1);
-        @include adaptiv-value("padding-bottom", 60, 20, 1);
+        @include adaptiveValue("padding-top", 160, 90, 1110, 479.98, 1);
+        @include adaptiveValue("padding-bottom", 60, 20, 1110, 479.98, 1);
         &::after {
             content: "";
             position: fixed;
             z-index: 6;
             width: 100%;
-            @include adaptiv-value("height", 142, 60, 1);
+            @include adaptiveValue("height", 142, 60, 1110, 479.98, 1);
             top: 0;
             left: 0;
-            background-color: #fff;
+            background-color: $white;
         }
         &._active {
             opacity: 1;
@@ -79,25 +79,25 @@
     }
 
     &__list {
-        li {
-            @include adaptiv-value("margin-bottom", 40, 20, 1);
-            &:last-child {
-                margin: 0px 0px 0px 0px;
-            }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 40, 20, 1110, 479.98, 1);
         }
     }
 
     &__link {
         font-weight: 600;
-        @include adaptiv-font(14, 20, 1);
-        line-height: 24 / 14 * 100%;
-        letter-spacing: 4px;
+        @include adaptiveValue("font-size", 14, 20, 991.98, 479.98, 1);
+        line-height: math.div(24, 14);
+        letter-spacing: rem(4);
         text-transform: uppercase;
-        color: #000000;
-        transition: all 0.3s ease 0s;
-        @media (min-width: $md2+px) {
+        color: $black;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
             &:hover {
-                color: #4737ff;
+                color: $primary;
             }
         }
     }
@@ -110,134 +110,77 @@
     &__search-popup {
     }
 }
+
 .popup-search {
     display: flex;
     align-items: center;
     justify-content: center;
-    @media (max-width: $md3+px) {
+    @media (max-width: $mobile) {
         flex-wrap: wrap;
     }
     &__input {
-        @media (max-width: $md3+px) {
-            margin: 0px 0px 20px 0px;
+        @media (max-width: $mobile) {
+            margin-bottom: rem(20);
         }
     }
 
     &__btn {
-        margin: 0px 0px 0px 15px;
-        @media (max-width: $md3+px) {
-            margin: 0;
+        @media (min-width: $mobile) {
+            margin-left: rem(15);
         }
-        @media (max-width: $md4+px) {
+        @media (max-width: $mobileSmall) {
             flex: 1 1 100%;
         }
     }
 }
-//========================================================================================================================================================
+
+//====================================================================================================
 
 .icon-menu {
-    position: relative;
-    z-index: 10;
-    cursor: pointer;
-    top: 0px;
-    right: 0px;
-    width: 34px;
-    height: 14px;
-    span {
-        transition: all 0.3s ease 0s;
-        right: 0px;
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background: #222222;
-        &:first-child {
-            top: 0px;
+    display: none;
+    @media (max-width: $mobile) {
+        display: block;
+        position: relative;
+        width: rem(34);
+        height: rem(14);
+        cursor: pointer;
+        z-index: 5;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        -webkit-tap-highlight-color: transparent;
+        span,
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s;
+            right: 0;
+            position: absolute;
+            height: rem(3);
+            background-color: $mainColor;
+        }
+        &::before {
+            top: 0;
             width: 100%;
         }
-        &:last-child {
-            width: 18px;
-            top: auto;
-            bottom: 0px;
+        span {
+            bottom: 0;
+            width: rem(18);
         }
-    }
-    @media (min-width: $md2+px) {
-        &:hover {
-            span {
-                &:last-child {
+        @media (any-hover: hover) {
+            &:hover {
+                span {
                     width: 100%;
                 }
             }
         }
-    }
-    &._active {
-        transform: scale(0.9);
-        span {
-            &:first-child {
-                transform: rotate(-45deg);
-                top: calc(50% - 2px);
-            }
-            &:last-child {
+        .menu-open & {
+            span {
+                bottom: calc(50% - rem(1));
                 transform: rotate(45deg);
-                bottom: calc(50% - 1px);
-                width: 100%;
+            }
+            &::before {
+                top: calc(50% - rem(1));
+                transform: rotate(-45deg);
             }
         }
     }
 }
-
-//====================================================================================================
-
-//====================================================================================================
-
-//Burger
-/*
-.icon-menu {
-	display: none;
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		width: rem(30);
-		height: rem(18);
-		cursor: pointer;
-		z-index: 5;
-    	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-   		-webkit-tap-highlight-color: transparent;
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: rem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - rem(1));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - rem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - rem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
-}
-*/

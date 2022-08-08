@@ -19,8 +19,22 @@ $fontFamily: "Fira Sans";
 $fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета\
+$white: #fff;
+$black: #000;
 $light_01: #f4f4f4;
-$mainColor: #000; // Цвет шрифта по умолчанию
+$light_02: #f5f4ff;
+$light_03: #d7d4d4;
+$light_04: #c4c4c4;
+$light_05: #e5e5e5;
+$light_06: #fafafa;
+$gray_01: #515151;
+$dark_01: #222222;
+$dark_02: #151515;
+$secondary_01: #c6b393;
+$secondary_02: #ef8e70;
+$primary: #4737ff;
+$primary_02: #1434e1;
+$mainColor: $dark_01; // Цвет шрифта по умолчанию
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
@@ -62,7 +76,7 @@ body {
     }
     &._scroll {
         .header__container {
-            min-height: 60px;
+            min-height: rem(60);
         }
         .fullscreen {
         }
@@ -144,28 +158,28 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+@import "blog";
 
 //========================================================================================================================================================
 
 .page {
-    flex: 1 1 auto;
     &__fullscreen {
-        @include adaptiv-value("margin-bottom", 220, 60, 1);
+        @include adaptiveValue("margin-bottom", 220, 60, 1110, 479.98, 1);
     }
     &__about {
-        @include adaptiv-value("margin-bottom", 140, 40, 1);
+        @include adaptiveValue("margin-bottom", 140, 40, 1110, 479.98, 1);
     }
     &__services {
-        @include adaptiv-value("margin-bottom", 180, 60, 1);
+        @include adaptiveValue("margin-bottom", 180, 60, 1110, 479.98, 1);
     }
     &__easy {
-        @include adaptiv-value("margin-bottom", 280, 60, 1);
+        @include adaptiveValue("margin-bottom", 280, 60, 1110, 479.98, 1);
     }
     &__works {
-        @include adaptiv-value("margin-bottom", 250, 60, 1);
+        @include adaptiveValue("margin-bottom", 250, 60, 1110, 479.98, 1);
     }
     &__testimonials {
-        @include adaptiv-value("margin-bottom", 180, 60, 1);
+        @include adaptiveValue("margin-bottom", 180, 60, 1110, 479.98, 1);
     }
     &__clients {
     }
