@@ -1,0 +1,66 @@
+@font-face {
+	font-family: "icons";
+	font-display: swap;
+	src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2#icons") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="_icon-"],
+[class*=" _icon-"] {
+	&:before,
+	&::after {
+		@extend %ic;
+		display: block;
+	}
+}
+
+._icon-google:before {
+	content: "\e900";
+	color: #fff;
+}
+._icon-facebook:before {
+	content: "\e901";
+	color: #fff;
+}
+._icon-linkedin:before {
+	content: "\e902";
+	color: #fff;
+}
+._icon-twitter:before {
+	content: "\e903";
+	color: #fff;
+}
+._icon-amd:before {
+	content: "\e904";
+}
+._icon-nike:before {
+	content: "\e905";
+}
+._icon-apple:before {
+	content: "\e906";
+}
+._icon-tinder:before {
+	content: "\e907";
+}
+._icon-xiaomi:before {
+	content: "\e908";
+}
+._icon-video:before {
+	content: "\e909";
+	color: #f96241;
+}
+._icon-search::after {
+	content: "\e90a";
+}
