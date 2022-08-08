@@ -24,8 +24,8 @@ body::after {
     transition: visibility 0.8s ease 0s;
     visibility: hidden;
     pointer-events: none;
+    z-index: 150;
     &_show {
-        z-index: 150;
         visibility: visible;
         overflow: auto;
         pointer-events: auto;
@@ -54,29 +54,34 @@ body::after {
         background-color: $gray_01;
         width: 100%;
         max-width: rem(900);
-        @include adaptiveValue("padding-top", 50, 40, 767.98, 479.98, 1);
-        @include adaptiveValue("padding-bottom", 50, 40, 767.98, 479.98, 1);
-        @include adaptiveValue("padding-left", 50, 20, 767.98, 479.98, 1);
-        @include adaptiveValue("padding-right", 50, 20, 767.98, 479.98, 1);
+        @include adaptiveValue("padding-top", 30, 20, 1110, 767.98, 1);
+        @include adaptiveValue("padding-bottom", 30, 20, 1110, 767.98, 1);
+        @include adaptiveValue("padding-left", 30, 20, 1110, 767.98, 1);
+        @include adaptiveValue("padding-right", 30, 20, 1110, 767.98, 1);
         .lock & {
             visibility: visible;
         }
     }
 
     &__close {
-        width: rem(20);
-        height: rem(20);
+        width: rem(30);
+        height: rem(30);
         position: absolute;
-        top: rem(10);
-        right: rem(10);
+        @include adaptiveValue("top", -50, -40, 1110, 767.98, 1);
+        right: 0;
         cursor: pointer;
         z-index: 30;
-        background: url("@img/icons/close.svg") 0 0 no-repeat;
+        background: url("@img/icons/close.svg") center no-repeat;
+        background-size: rem(25) rem(25);
         transition: opacity 0.3s ease 0s;
         @media (any-hover: hover) {
             &:hover {
                 opacity: 0.6;
             }
         }
+    }
+
+    &__video {
+        @extend %responsiveVideo;
     }
 }

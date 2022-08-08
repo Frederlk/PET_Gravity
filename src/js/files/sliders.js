@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from "swiper";
+import Swiper, { Navigation, Keyboard, Lazy, Autoplay, Pagination, EffectFade } from "swiper";
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -27,14 +27,14 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
     // Перечень слайдеров
     // Проверяем, есть ли слайдер на стронице
-    if (document.querySelector(".swiper")) {
+    if (document.querySelector(".fullscreen__slider")) {
         // Указываем скласс нужного слайдера
         // Создаем слайдер
-        new Swiper(".swiper", {
+        new Swiper(".fullscreen__slider", {
             // Указываем скласс нужного слайдера
             // Подключаем модули слайдера
             // для конкретного случая
-            modules: [Navigation],
+            modules: [EffectFade, Keyboard, Pagination, Autoplay, Lazy],
             observer: true,
             observeParents: true,
             slidesPerView: 1,
@@ -42,78 +42,11 @@ function initSliders() {
             autoHeight: true,
             speed: 800,
 
-            //touchRatio: 0,
+            touchRatio: 0,
             //simulateTouch: false,
-            //loop: true,
+            loop: true,
             //preloadImages: false,
-            //lazy: true,
-
-            /*
-			// Эффекты
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
-
-            // Пагинация
-            /*
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			*/
-
-            // Скроллбар
-            /*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
-
-            // Кнопки "влево/вправо"
-            navigation: {
-                prevEl: ".swiper-button-prev",
-                nextEl: ".swiper-button-next",
-            },
-
-            // Брейкпоинты
-            /*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-            // События
-            on: {},
-        });
-    }
-
-    if (document.querySelector(".fullscreen__slider")) {
-        let sliderHome = new Swiper(".fullscreen__slider", {
-            // Эффекты переключения слайдов.
-            // Листание
-            //effect: 'slide',
-
-            // Эффекты переключения слайдов.
-            //Cмена прозрачности
+            lazy: true,
             effect: "fade",
             // Дополнение к fade
             fadeEffect: {
@@ -122,803 +55,493 @@ function initSliders() {
                 crossFade: true,
             },
 
-            /*
-			// Эффекты переключения слайдов.
-			// Переворот
-			effect: 'flip',
-			// Дополнение к flip
-			flipEffect: {
-				// Тень
-				slideShadows: true,
-				// Показ только активного слайда
-				limitRotation: true
-			},
-			*/
-            /*
-			// Эффекты переключения слайдов.
-			// Куб
-			effect: 'cube',
-			// Дополнение к cube
-			cubeEffect: {
-				// Настройки тени
-				slideShadows: true,
-				shadow: true,
-				shadowOffset: 20,
-				shadowScale: 0.94
-			},
-			*/
-            /*
-			// Эффекты переключения слайдов.
-			// Эффект потока
-			effect: 'coverflow',
-			// Дополнение к coverflow
-			coverflowEffect: {
-				// Угол
-				rotate: 20,
-				// Наложение
-				stretch: 50,
-				// Тень
-				slideShadows: true,
-			},
-			*/
-
-            // Arrows
-            navigation: {
-                nextEl: ".more__item_next",
-                prevEl: ".more__item_prev",
+            autoplay: {
+                // Пауза между прокруткой
+                delay: 6000,
+                // Закончить на последнем слайде
+                stopOnLastSlide: true,
+                // Отключить после ручного переключения
+                disableOnInteraction: false,
             },
 
-            observer: true,
-            observeParents: true,
-            // Количество слайдов для показа
-            slidesPerView: 1,
-            // Отступ между слайдами
-            spaceBetween: 0,
-            // Автовысота
-            autoHeight: false,
-            // Отключение функционала
-            // если слайдов меньше чем нужно
-            watchOverflow: true,
-            adaptiveHeight: true,
+            // Управление клавиатурой
+            keyboard: {
+                // Включить\выключить
+                enabled: true,
+                // Включить\выключить
+                // только когда слайдер
+                // в пределах вьюпорта
+                onlyInViewport: true,
+                // Включить\выключить
+                // управление клавишами
+                // pageUp, pageDown
+                pageUpDown: true,
+            },
 
             pagination: {
                 el: ".fullscreen__progressbar",
-
-                // Буллеты
-                type: "bullets",
                 clickable: true,
-                // Динамические буллеты
-                //dynamicBullets: true,
-                // Кастомные буллеты
-                /*renderBullet: function (index, className) {
-					return '<span class="' + className + '">' + (index + 1) + '</span>';
-				},*/
-
-                // Фракция
                 type: "progressbar",
             },
 
-            // Скролл
-            /*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				// Возможность перетаскивать скролл
-				draggable: true
-			},
-			*/
-
-            // Включение/отключение
-            // перетаскивания на ПК
-            simulateTouch: true,
-            // Чувствительность свайпа
-            touchRatio: 1,
-
-            // Угол срабатывания свайпа/перетаскивания
-            touchAngle: 45,
-            // Курсор перетаскивания
-            grabCursor: true,
-            // Переключение при клике на слайд
-            slideToClickedSlide: false,
-
-            // Навигация по хешу
-            hashNavigation: {
-                // Отслеживать состояние
-                watchState: true,
-            },
-
-            // Управление клавиатурой
-            keyboard: {
-                // Включить\выключить
-                enabled: true,
-                // Включить\выключить
-                // только когда слайдер
-                // в пределах вьюпорта
-                onlyInViewport: true,
-                // Включить\выключить
-                // управление клавишами
-                // pageUp, pageDown
-                pageUpDown: true,
-            },
-            // Количество пролистываемых слайдов
-            slidesPerGroup: 1,
-
-            // Активный слайд по центру
-            centeredSlides: false,
-
-            // Стартовый слайд.
-            initialSlide: 0,
-
-            // Мультирядность
-            slidesPerColumn: 1,
-
-            // Бесконечный слайдер
-            loop: true,
-
-            // Кол-во дублирующих слайдов
-            loopedSlides: 0,
-
-            // Свободный режим
-            freeMode: false,
-
-            // Автопрокрутка
-
-            autoplay: {
-                // Пауза между прокруткой
-                delay: 6000,
-                // Закончить на последнем слайде
-                stopOnLastSlide: true,
-                // Отключить после ручного переключения
-                disableOnInteraction: false,
-            },
-
-            // Скорость
-            speed: 1500,
-
-            // Вертикальный слайдер
-            direction: "horizontal", //'vertical'
-
-            // Отключить предзагрузка картинок
-            preloadImages: false,
-            // Lazy Loading
-            // (подгрузка картинок)
-
-            lazy: {
-                // Подгружать на старте
-                // переключения слайда
-                loadOnTransitionStart: false,
-
-                // Подгрузить предыдущую
-                // и следующую картинки
-                loadPrevNext: false,
-            },
-
-            // Слежка за видимыми слайдами
-            watchSlidesProgress: false,
-
-            // Добавление класса видимым слайдам
-            watchSlidesVisibility: false,
-            /*
-		
-			// Зум картинки
-			zoom: {
-				// Макимальное увеличение
-				maxRatio: 5,
-				// Минимальное увеличение
-				minRatio: 1,
-			},
-			*/
-
-            // Миниатюры (превью)
-            /*
-			thumbs: {
-				// Свайпер с мениатюрами
-				// и его настройки
-				swiper: {
-					el: '.image-mini-slider',
-					slidesPerView: 5,
-				}
-			},
-			*/
-
-            /*
-			// Передача управления
-			controller: {
-				control: myTextSlider
-			},
-			*/
-
-            /*
-				// Обновить свайпер
-				// при изменении элементов слайдера
-				observer: true,
-				// Обновить свайпер
-				// при изменении родительских
-				// элементов слайдера
-				observeParents: true,
-				// Обновить свайпер
-				// при изменении дочерних
-				// элементов слайда
-				observeSlideChildren: true,
-			*/
-
-            /*
-				// Управление колесом мыши
-				mousewheel: {
-					// Чувствительность колеса мыши
-					sensitivity: 0,
-					// Класс объекта на котором
-					// будет срабатывать прокрутка мышью.
-					//eventsTarget: ".image-slider"
-				},
-			*/
-
-            /*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-            on: {
-                lazyImageReady: function () {
-                    ibg();
-                },
-            },
+            // // Кнопки "влево/вправо"
+            // navigation: {
+            //     prevEl: ".swiper-button-prev",
+            //     nextEl: ".swiper-button-next",
+            // },
         });
     }
 
-    if (document.querySelector(".services__slider")) {
-        let servicesHome = new Swiper(".services__slider", {
-            // Эффекты переключения слайдов.
-            // Листание
-            effect: "slide",
+    // if (document.querySelector(".services__slider")) {
+    //     let servicesHome = new Swiper(".services__slider", {
+    //         // Эффекты переключения слайдов.
+    //         // Листание
+    //         effect: "slide",
 
-            // Эффекты переключения слайдов.
-            //Cмена прозрачности
-            /*effect: 'fade',
-			// Дополнение к fade
-			fadeEffect: {
-				// Параллельная
-				// смена прозрачности
-				crossFade: true
-			},*/
+    //         // Arrows
+    //         navigation: {
+    //             nextEl: ".services__arrow_next",
+    //             prevEl: ".services__arrow_prev",
+    //         },
 
-            /*
-			// Эффекты переключения слайдов.
-			// Переворот
-			effect: 'flip',
-			// Дополнение к flip
-			flipEffect: {
-				// Тень
-				slideShadows: true,
-				// Показ только активного слайда
-				limitRotation: true
-			},
-			*/
-            /*
-			// Эффекты переключения слайдов.
-			// Куб
-			effect: 'cube',
-			// Дополнение к cube
-			cubeEffect: {
-				// Настройки тени
-				slideShadows: true,
-				shadow: true,
-				shadowOffset: 20,
-				shadowScale: 0.94
-			},
-			*/
-            /*
-			// Эффекты переключения слайдов.
-			// Эффект потока
-			effect: 'coverflow',
-			// Дополнение к coverflow
-			coverflowEffect: {
-				// Угол
-				rotate: 20,
-				// Наложение
-				stretch: 50,
-				// Тень
-				slideShadows: true,
-			},
-			*/
+    //         observer: true,
+    //         observeParents: true,
+    //         // Количество слайдов для показа
+    //         slidesPerView: 1,
+    //         // Отступ между слайдами
+    //         spaceBetween: 30,
+    //         // Автовысота
+    //         autoHeight: false,
+    //         // Отключение функционала
+    //         // если слайдов меньше чем нужно
+    //         watchOverflow: true,
+    //         adaptiveHeight: true,
 
-            // Arrows
-            navigation: {
-                nextEl: ".services__arrow_next",
-                prevEl: ".services__arrow_prev",
-            },
+    //         // Включение/отключение
+    //         // перетаскивания на ПК
+    //         simulateTouch: true,
+    //         // Чувствительность свайпа
+    //         touchRatio: 1,
 
-            observer: true,
-            observeParents: true,
-            // Количество слайдов для показа
-            slidesPerView: 1,
-            // Отступ между слайдами
-            spaceBetween: 30,
-            // Автовысота
-            autoHeight: false,
-            // Отключение функционала
-            // если слайдов меньше чем нужно
-            watchOverflow: true,
-            adaptiveHeight: true,
+    //         // Угол срабатывания свайпа/перетаскивания
+    //         touchAngle: 45,
+    //         // Курсор перетаскивания
+    //         grabCursor: true,
+    //         // Переключение при клике на слайд
+    //         slideToClickedSlide: false,
 
-            // Скролл
-            /*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				// Возможность перетаскивать скролл
-				draggable: true
-			},
-			*/
+    //         // Навигация по хешу
+    //         hashNavigation: {
+    //             // Отслеживать состояние
+    //             watchState: true,
+    //         },
 
-            // Включение/отключение
-            // перетаскивания на ПК
-            simulateTouch: true,
-            // Чувствительность свайпа
-            touchRatio: 1,
+    //         // Управление клавиатурой
+    //         keyboard: {
+    //             // Включить\выключить
+    //             enabled: true,
+    //             // Включить\выключить
+    //             // только когда слайдер
+    //             // в пределах вьюпорта
+    //             onlyInViewport: true,
+    //             // Включить\выключить
+    //             // управление клавишами
+    //             // pageUp, pageDown
+    //             pageUpDown: true,
+    //         },
+    //         // Количество пролистываемых слайдов
+    //         slidesPerGroup: 1,
 
-            // Угол срабатывания свайпа/перетаскивания
-            touchAngle: 45,
-            // Курсор перетаскивания
-            grabCursor: true,
-            // Переключение при клике на слайд
-            slideToClickedSlide: false,
+    //         // Активный слайд по центру
+    //         centeredSlides: false,
 
-            // Навигация по хешу
-            hashNavigation: {
-                // Отслеживать состояние
-                watchState: true,
-            },
+    //         // Стартовый слайд.
+    //         initialSlide: 0,
 
-            // Управление клавиатурой
-            keyboard: {
-                // Включить\выключить
-                enabled: true,
-                // Включить\выключить
-                // только когда слайдер
-                // в пределах вьюпорта
-                onlyInViewport: true,
-                // Включить\выключить
-                // управление клавишами
-                // pageUp, pageDown
-                pageUpDown: true,
-            },
-            // Количество пролистываемых слайдов
-            slidesPerGroup: 1,
+    //         // Мультирядность
+    //         slidesPerColumn: 1,
 
-            // Активный слайд по центру
-            centeredSlides: false,
+    //         // Бесконечный слайдер
+    //         loop: false,
 
-            // Стартовый слайд.
-            initialSlide: 0,
+    //         // Кол-во дублирующих слайдов
+    //         loopedSlides: 0,
 
-            // Мультирядность
-            slidesPerColumn: 1,
+    //         // Свободный режим
+    //         freeMode: false,
 
-            // Бесконечный слайдер
-            loop: false,
+    //         // Автопрокрутка
 
-            // Кол-во дублирующих слайдов
-            loopedSlides: 0,
+    //         // Скорость
+    //         speed: 1500,
 
-            // Свободный режим
-            freeMode: false,
+    //         // Вертикальный слайдер
+    //         direction: "horizontal", //'vertical'
 
-            // Автопрокрутка
+    //         // Отключить предзагрузка картинок
+    //         preloadImages: false,
+    //         // Lazy Loading
+    //         // (подгрузка картинок)
 
-            // Скорость
-            speed: 1500,
+    //         lazy: {
+    //             // Подгружать на старте
+    //             // переключения слайда
+    //             loadOnTransitionStart: false,
 
-            // Вертикальный слайдер
-            direction: "horizontal", //'vertical'
+    //             // Подгрузить предыдущую
+    //             // и следующую картинки
+    //             loadPrevNext: false,
+    //         },
 
-            // Отключить предзагрузка картинок
-            preloadImages: false,
-            // Lazy Loading
-            // (подгрузка картинок)
+    //         // Слежка за видимыми слайдами
+    //         watchSlidesProgress: false,
 
-            lazy: {
-                // Подгружать на старте
-                // переключения слайда
-                loadOnTransitionStart: false,
+    //         // Добавление класса видимым слайдам
+    //         watchSlidesVisibility: false,
+    //         /*
 
-                // Подгрузить предыдущую
-                // и следующую картинки
-                loadPrevNext: false,
-            },
+    // 		// Зум картинки
+    // 		zoom: {
+    // 			// Макимальное увеличение
+    // 			maxRatio: 5,
+    // 			// Минимальное увеличение
+    // 			minRatio: 1,
+    // 		},
+    // 		*/
 
-            // Слежка за видимыми слайдами
-            watchSlidesProgress: false,
+    //         // Миниатюры (превью)
+    //         /*
+    // 		thumbs: {
+    // 			// Свайпер с мениатюрами
+    // 			// и его настройки
+    // 			swiper: {
+    // 				el: '.image-mini-slider',
+    // 				slidesPerView: 5,
+    // 			}
+    // 		},
+    // 		*/
 
-            // Добавление класса видимым слайдам
-            watchSlidesVisibility: false,
-            /*
-		
-			// Зум картинки
-			zoom: {
-				// Макимальное увеличение
-				maxRatio: 5,
-				// Минимальное увеличение
-				minRatio: 1,
-			},
-			*/
+    //         /*
+    // 		// Передача управления
+    // 		controller: {
+    // 			control: myTextSlider
+    // 		},
+    // 		*/
 
-            // Миниатюры (превью)
-            /*
-			thumbs: {
-				// Свайпер с мениатюрами
-				// и его настройки
-				swiper: {
-					el: '.image-mini-slider',
-					slidesPerView: 5,
-				}
-			},
-			*/
+    //         /*
+    // 			// Обновить свайпер
+    // 			// при изменении элементов слайдера
+    // 			observer: true,
+    // 			// Обновить свайпер
+    // 			// при изменении родительских
+    // 			// элементов слайдера
+    // 			observeParents: true,
+    // 			// Обновить свайпер
+    // 			// при изменении дочерних
+    // 			// элементов слайда
+    // 			observeSlideChildren: true,
+    // 		*/
 
-            /*
-			// Передача управления
-			controller: {
-				control: myTextSlider
-			},
-			*/
+    //         /*
+    // 			// Управление колесом мыши
+    // 			mousewheel: {
+    // 				// Чувствительность колеса мыши
+    // 				sensitivity: 0,
+    // 				// Класс объекта на котором
+    // 				// будет срабатывать прокрутка мышью.
+    // 				//eventsTarget: ".image-slider"
+    // 			},
+    // 		*/
 
-            /*
-				// Обновить свайпер
-				// при изменении элементов слайдера
-				observer: true,
-				// Обновить свайпер
-				// при изменении родительских
-				// элементов слайдера
-				observeParents: true,
-				// Обновить свайпер
-				// при изменении дочерних
-				// элементов слайда
-				observeSlideChildren: true,
-			*/
+    //         /*
+    // 		breakpoints: {
+    // 			320: {
+    // 				slidesPerView: 1,
+    // 				spaceBetween: 0,
+    // 				autoHeight: true,
+    // 			},
+    // 			768: {
+    // 				slidesPerView: 2,
+    // 				spaceBetween: 20,
+    // 			},
+    // 			992: {
+    // 				slidesPerView: 3,
+    // 				spaceBetween: 20,
+    // 			},
+    // 			1268: {
+    // 				slidesPerView: 4,
+    // 				spaceBetween: 30,
+    // 			},
+    // 		},
+    // 		*/
+    //         on: {
+    //             lazyImageReady: function () {
+    //                 ibg();
+    //             },
+    //         },
+    //     });
+    // }
 
-            /*
-				// Управление колесом мыши
-				mousewheel: {
-					// Чувствительность колеса мыши
-					sensitivity: 0,
-					// Класс объекта на котором
-					// будет срабатывать прокрутка мышью.
-					//eventsTarget: ".image-slider"
-				},
-			*/
+    // if (document.querySelector(".testimonials__slider")) {
+    //     let testimonialsHome = new Swiper(".testimonials__slider", {
+    //         // Эффекты переключения слайдов.
+    //         // Листание
+    //         //effect: 'slide',
 
-            /*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-            on: {
-                lazyImageReady: function () {
-                    ibg();
-                },
-            },
-        });
-    }
+    //         // Эффекты переключения слайдов.
+    //         //Cмена прозрачности
+    //         effect: "fade",
+    //         // Дополнение к fade
+    //         fadeEffect: {
+    //             // Параллельная
+    //             // смена прозрачности
+    //             crossFade: true,
+    //         },
 
-    if (document.querySelector(".testimonials__slider")) {
-        let testimonialsHome = new Swiper(".testimonials__slider", {
-            // Эффекты переключения слайдов.
-            // Листание
-            //effect: 'slide',
+    //         /*
+    // 		// Эффекты переключения слайдов.
+    // 		// Переворот
+    // 		effect: 'flip',
+    // 		// Дополнение к flip
+    // 		flipEffect: {
+    // 			// Тень
+    // 			slideShadows: true,
+    // 			// Показ только активного слайда
+    // 			limitRotation: true
+    // 		},
+    // 		*/
+    //         /*
+    // 		// Эффекты переключения слайдов.
+    // 		// Куб
+    // 		effect: 'cube',
+    // 		// Дополнение к cube
+    // 		cubeEffect: {
+    // 			// Настройки тени
+    // 			slideShadows: true,
+    // 			shadow: true,
+    // 			shadowOffset: 20,
+    // 			shadowScale: 0.94
+    // 		},
+    // 		*/
+    //         /*
+    // 		// Эффекты переключения слайдов.
+    // 		// Эффект потока
+    // 		effect: 'coverflow',
+    // 		// Дополнение к coverflow
+    // 		coverflowEffect: {
+    // 			// Угол
+    // 			rotate: 20,
+    // 			// Наложение
+    // 			stretch: 50,
+    // 			// Тень
+    // 			slideShadows: true,
+    // 		},
+    // 		*/
 
-            // Эффекты переключения слайдов.
-            //Cмена прозрачности
-            effect: "fade",
-            // Дополнение к fade
-            fadeEffect: {
-                // Параллельная
-                // смена прозрачности
-                crossFade: true,
-            },
+    //         // Arrows
+    //         navigation: {
+    //             nextEl: ".testimonials__arrow_next",
+    //             prevEl: ".testimonials__arrow_prev",
+    //         },
 
-            /*
-			// Эффекты переключения слайдов.
-			// Переворот
-			effect: 'flip',
-			// Дополнение к flip
-			flipEffect: {
-				// Тень
-				slideShadows: true,
-				// Показ только активного слайда
-				limitRotation: true
-			},
-			*/
-            /*
-			// Эффекты переключения слайдов.
-			// Куб
-			effect: 'cube',
-			// Дополнение к cube
-			cubeEffect: {
-				// Настройки тени
-				slideShadows: true,
-				shadow: true,
-				shadowOffset: 20,
-				shadowScale: 0.94
-			},
-			*/
-            /*
-			// Эффекты переключения слайдов.
-			// Эффект потока
-			effect: 'coverflow',
-			// Дополнение к coverflow
-			coverflowEffect: {
-				// Угол
-				rotate: 20,
-				// Наложение
-				stretch: 50,
-				// Тень
-				slideShadows: true,
-			},
-			*/
+    //         observer: true,
+    //         observeParents: true,
+    //         // Количество слайдов для показа
+    //         slidesPerView: 1,
+    //         // Отступ между слайдами
+    //         spaceBetween: 30,
+    //         // Автовысота
+    //         autoHeight: false,
+    //         // Отключение функционала
+    //         // если слайдов меньше чем нужно
+    //         watchOverflow: true,
+    //         adaptiveHeight: true,
 
-            // Arrows
-            navigation: {
-                nextEl: ".testimonials__arrow_next",
-                prevEl: ".testimonials__arrow_prev",
-            },
+    //         // Скролл
+    //         /*
+    // 		scrollbar: {
+    // 			el: '.swiper-scrollbar',
+    // 			// Возможность перетаскивать скролл
+    // 			draggable: true
+    // 		},
+    // 		*/
 
-            observer: true,
-            observeParents: true,
-            // Количество слайдов для показа
-            slidesPerView: 1,
-            // Отступ между слайдами
-            spaceBetween: 30,
-            // Автовысота
-            autoHeight: false,
-            // Отключение функционала
-            // если слайдов меньше чем нужно
-            watchOverflow: true,
-            adaptiveHeight: true,
+    //         // Включение/отключение
+    //         // перетаскивания на ПК
+    //         simulateTouch: true,
+    //         // Чувствительность свайпа
+    //         touchRatio: 1,
 
-            // Скролл
-            /*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				// Возможность перетаскивать скролл
-				draggable: true
-			},
-			*/
+    //         // Угол срабатывания свайпа/перетаскивания
+    //         touchAngle: 45,
+    //         // Курсор перетаскивания
+    //         grabCursor: true,
+    //         // Переключение при клике на слайд
+    //         slideToClickedSlide: false,
 
-            // Включение/отключение
-            // перетаскивания на ПК
-            simulateTouch: true,
-            // Чувствительность свайпа
-            touchRatio: 1,
+    //         // Навигация по хешу
+    //         hashNavigation: {
+    //             // Отслеживать состояние
+    //             watchState: true,
+    //         },
 
-            // Угол срабатывания свайпа/перетаскивания
-            touchAngle: 45,
-            // Курсор перетаскивания
-            grabCursor: true,
-            // Переключение при клике на слайд
-            slideToClickedSlide: false,
+    //         // Управление клавиатурой
+    //         keyboard: {
+    //             // Включить\выключить
+    //             enabled: true,
+    //             // Включить\выключить
+    //             // только когда слайдер
+    //             // в пределах вьюпорта
+    //             onlyInViewport: true,
+    //             // Включить\выключить
+    //             // управление клавишами
+    //             // pageUp, pageDown
+    //             pageUpDown: true,
+    //         },
+    //         // Количество пролистываемых слайдов
+    //         slidesPerGroup: 1,
 
-            // Навигация по хешу
-            hashNavigation: {
-                // Отслеживать состояние
-                watchState: true,
-            },
+    //         // Активный слайд по центру
+    //         centeredSlides: false,
 
-            // Управление клавиатурой
-            keyboard: {
-                // Включить\выключить
-                enabled: true,
-                // Включить\выключить
-                // только когда слайдер
-                // в пределах вьюпорта
-                onlyInViewport: true,
-                // Включить\выключить
-                // управление клавишами
-                // pageUp, pageDown
-                pageUpDown: true,
-            },
-            // Количество пролистываемых слайдов
-            slidesPerGroup: 1,
+    //         // Стартовый слайд.
+    //         initialSlide: 0,
 
-            // Активный слайд по центру
-            centeredSlides: false,
+    //         // Мультирядность
+    //         slidesPerColumn: 1,
 
-            // Стартовый слайд.
-            initialSlide: 0,
+    //         // Бесконечный слайдер
+    //         loop: true,
 
-            // Мультирядность
-            slidesPerColumn: 1,
+    //         // Кол-во дублирующих слайдов
+    //         loopedSlides: 0,
 
-            // Бесконечный слайдер
-            loop: true,
+    //         // Свободный режим
+    //         freeMode: false,
 
-            // Кол-во дублирующих слайдов
-            loopedSlides: 0,
+    //         // Автопрокрутка
+    //         autoplay: {
+    //             // Пауза между прокруткой
+    //             delay: 6000,
+    //             // Закончить на последнем слайде
+    //             stopOnLastSlide: true,
+    //             // Отключить после ручного переключения
+    //             disableOnInteraction: false,
+    //         },
 
-            // Свободный режим
-            freeMode: false,
+    //         // Скорость
+    //         speed: 1500,
 
-            // Автопрокрутка
-            autoplay: {
-                // Пауза между прокруткой
-                delay: 6000,
-                // Закончить на последнем слайде
-                stopOnLastSlide: true,
-                // Отключить после ручного переключения
-                disableOnInteraction: false,
-            },
+    //         // Вертикальный слайдер
+    //         direction: "horizontal", //'vertical'
 
-            // Скорость
-            speed: 1500,
+    //         // Отключить предзагрузка картинок
+    //         preloadImages: false,
+    //         // Lazy Loading
+    //         // (подгрузка картинок)
 
-            // Вертикальный слайдер
-            direction: "horizontal", //'vertical'
+    //         lazy: {
+    //             // Подгружать на старте
+    //             // переключения слайда
+    //             loadOnTransitionStart: false,
 
-            // Отключить предзагрузка картинок
-            preloadImages: false,
-            // Lazy Loading
-            // (подгрузка картинок)
+    //             // Подгрузить предыдущую
+    //             // и следующую картинки
+    //             loadPrevNext: false,
+    //         },
 
-            lazy: {
-                // Подгружать на старте
-                // переключения слайда
-                loadOnTransitionStart: false,
+    //         // Слежка за видимыми слайдами
+    //         watchSlidesProgress: false,
 
-                // Подгрузить предыдущую
-                // и следующую картинки
-                loadPrevNext: false,
-            },
+    //         // Добавление класса видимым слайдам
+    //         watchSlidesVisibility: false,
+    //         /*
 
-            // Слежка за видимыми слайдами
-            watchSlidesProgress: false,
+    // 		// Зум картинки
+    // 		zoom: {
+    // 			// Макимальное увеличение
+    // 			maxRatio: 5,
+    // 			// Минимальное увеличение
+    // 			minRatio: 1,
+    // 		},
+    // 		*/
 
-            // Добавление класса видимым слайдам
-            watchSlidesVisibility: false,
-            /*
-		
-			// Зум картинки
-			zoom: {
-				// Макимальное увеличение
-				maxRatio: 5,
-				// Минимальное увеличение
-				minRatio: 1,
-			},
-			*/
+    //         // Миниатюры (превью)
+    //         /*
+    // 		thumbs: {
+    // 			// Свайпер с мениатюрами
+    // 			// и его настройки
+    // 			swiper: {
+    // 				el: '.image-mini-slider',
+    // 				slidesPerView: 5,
+    // 			}
+    // 		},
+    // 		*/
 
-            // Миниатюры (превью)
-            /*
-			thumbs: {
-				// Свайпер с мениатюрами
-				// и его настройки
-				swiper: {
-					el: '.image-mini-slider',
-					slidesPerView: 5,
-				}
-			},
-			*/
+    //         /*
+    // 		// Передача управления
+    // 		controller: {
+    // 			control: myTextSlider
+    // 		},
+    // 		*/
 
-            /*
-			// Передача управления
-			controller: {
-				control: myTextSlider
-			},
-			*/
+    //         /*
+    // 			// Обновить свайпер
+    // 			// при изменении элементов слайдера
+    // 			observer: true,
+    // 			// Обновить свайпер
+    // 			// при изменении родительских
+    // 			// элементов слайдера
+    // 			observeParents: true,
+    // 			// Обновить свайпер
+    // 			// при изменении дочерних
+    // 			// элементов слайда
+    // 			observeSlideChildren: true,
+    // 		*/
 
-            /*
-				// Обновить свайпер
-				// при изменении элементов слайдера
-				observer: true,
-				// Обновить свайпер
-				// при изменении родительских
-				// элементов слайдера
-				observeParents: true,
-				// Обновить свайпер
-				// при изменении дочерних
-				// элементов слайда
-				observeSlideChildren: true,
-			*/
+    //         /*
+    // 			// Управление колесом мыши
+    // 			mousewheel: {
+    // 				// Чувствительность колеса мыши
+    // 				sensitivity: 0,
+    // 				// Класс объекта на котором
+    // 				// будет срабатывать прокрутка мышью.
+    // 				//eventsTarget: ".image-slider"
+    // 			},
+    // 		*/
 
-            /*
-				// Управление колесом мыши
-				mousewheel: {
-					// Чувствительность колеса мыши
-					sensitivity: 0,
-					// Класс объекта на котором
-					// будет срабатывать прокрутка мышью.
-					//eventsTarget: ".image-slider"
-				},
-			*/
-
-            /*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-            on: {
-                lazyImageReady: function () {
-                    ibg();
-                },
-            },
-        });
-    }
-}
-// Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
-function initSlidersScroll() {
-    let sliderScrollItems = document.querySelectorAll(".swiper_scroll");
-    if (sliderScrollItems.length > 0) {
-        for (let index = 0; index < sliderScrollItems.length; index++) {
-            const sliderScrollItem = sliderScrollItems[index];
-            const sliderScrollBar = sliderScrollItem.querySelector(".swiper-scrollbar");
-            const sliderScroll = new Swiper(sliderScrollItem, {
-                observer: true,
-                observeParents: true,
-                direction: "vertical",
-                slidesPerView: "auto",
-                freeMode: {
-                    enabled: true,
-                },
-                scrollbar: {
-                    el: sliderScrollBar,
-                    draggable: true,
-                    snapOnRelease: false,
-                },
-                mousewheel: {
-                    releaseOnEdges: true,
-                },
-            });
-            sliderScroll.scrollbar.updateSize();
-        }
-    }
+    //         /*
+    // 		breakpoints: {
+    // 			320: {
+    // 				slidesPerView: 1,
+    // 				spaceBetween: 0,
+    // 				autoHeight: true,
+    // 			},
+    // 			768: {
+    // 				slidesPerView: 2,
+    // 				spaceBetween: 20,
+    // 			},
+    // 			992: {
+    // 				slidesPerView: 3,
+    // 				spaceBetween: 20,
+    // 			},
+    // 			1268: {
+    // 				slidesPerView: 4,
+    // 				spaceBetween: 30,
+    // 			},
+    // 		},
+    // 		*/
+    //         on: {
+    //             lazyImageReady: function () {
+    //                 ibg();
+    //             },
+    //         },
+    //     });
+    // }
 }
 
 window.addEventListener("load", function (e) {
     // Запуск инициализации слайдеров
     initSliders();
     // Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
-    //initSlidersScroll();
 });

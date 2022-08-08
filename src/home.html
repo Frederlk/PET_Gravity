@@ -7,17 +7,17 @@
             @@include('html/_header.htm',{})
             <main class="page">
                 <section class="page__fullscreen fullscreen">
-                    <div class="fullscreen__content">
-                        <div class="fullscreen__slider _swiper">
-                            <div class="fullscreen__slide">
+                    <div class="fullscreen__slider swiper">
+                        <div class="fullscreen__wrapper swiper-wrapper">
+                            <div class="fullscreen__slide swiper-slide">
                                 <div class="fullscreen__column column-fullscreen-info">
                                     <div class="column-fullscreen-info__container">
                                         <div class="column-fullscreen-info__body">
                                             <h1 class="column-fullscreen-info__title">Work around you and your team</h1>
-                                            <div class="column-fullscreen-info__text">
+                                            <p class="column-fullscreen-info__text">
                                                 From ads that dance or sing to MTV-like commercials, online advertisers are now
                                                 using a new type of technology “rich media” to attract consumers.
-                                            </div>
+                                            </p>
                                             <a href="#" class="column-fullscreen-info__btn btn btn_blue">get started</a>
                                         </div>
                                         <div class="fullscreen__pagination">
@@ -27,11 +27,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="fullscreen__image">
-                                    <img src="@img/bg/01.jpg" alt="" />
+                                <div class="fullscreen__image-ibg">
+                                    <img src="@img/bg/01.jpg" alt="Work around you and your team" />
                                 </div>
                             </div>
-                            <div class="fullscreen__slide">
+                            <div class="fullscreen__slide swiper-slide">
                                 <div class="fullscreen__column column-fullscreen-info">
                                     <div class="column-fullscreen-info__container">
                                         <div class="column-fullscreen-info__body">
@@ -50,11 +50,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="fullscreen__image">
-                                    <img src="@img/bg/02.jpg" alt="" />
+                                <div class="fullscreen__image-ibg">
+                                    <img src="@img/bg/02.jpg" alt="Well thought with super easy to use" />
                                 </div>
                             </div>
-                            <div class="fullscreen__slide">
+                            <div class="fullscreen__slide swiper-slide">
                                 <div class="fullscreen__column column-fullscreen-info">
                                     <div class="column-fullscreen-info__container">
                                         <div class="column-fullscreen-info__body">
@@ -73,21 +73,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="fullscreen__image">
-                                    <img src="@img/bg/03.jpg" alt="" />
+                                <div class="fullscreen__image-ibg">
+                                    <img src="@img/bg/03.jpg" alt="Discover our Work" />
                                 </div>
                             </div>
                         </div>
-                        <div class="column-fullscreen-info__video-popup popup-video">
-                            <a href="#video" class="popup-video__thumbnail _popup-link">
-                                <div class="popup-video__cover-ibg">
-                                    <img src="@img/video.jpg" alt="" />
-                                </div>
-                                <div class="popup-video__control-icon _icon-video"></div>
-                            </a>
-                        </div>
+                    </div>
+                    <div class="fullscreen__video popup-video">
+                        <a href="#video" data-popup="#video" class="popup-video__thumbnail">
+                            <div class="popup-video__cover-ibg">
+                                <img src="@img/video.jpg" alt="video popup" />
+                            </div>
+                            <div class="popup-video__control-icon _icon-video"></div>
+                        </a>
                     </div>
                 </section>
+
                 <section class="page__about about">
                     <div class="about__container">
                         <div class="about__column column-about-image">
