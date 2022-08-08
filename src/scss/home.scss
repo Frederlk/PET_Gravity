@@ -1,8 +1,12 @@
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 .fullscreen {
-    transition: all 0.8s ease 0s;
+    transition: padding-top 0.8s ease 0s;
     @include adaptiveValue("padding-top", 142, 60, 1110, 479.98, 1);
+    ._scroll & {
+        padding-top: rem(60);
+    }
+
     &__content {
         position: relative;
     }

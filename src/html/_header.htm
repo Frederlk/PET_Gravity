@@ -4,8 +4,8 @@
             <img src="@img/icons/logo_h.svg" alt="logo" />
         </a>
         <div class="header__menu menu">
-            <nav class="menu__body">
-                <ul class="menu__list">
+            <nav data-lp class="menu__body">
+                <ul class="menu__container">
                     <li class="menu__item"><a href="#Home" class="menu__link">Home</a></li>
                     <li class="menu__item"><a href="#Solutions" class="menu__link">Solutions</a></li>
                     <li class="menu__item"><a href="#Services" class="menu__link">Services</a></li>
@@ -14,7 +14,13 @@
                 </ul>
             </nav>
         </div>
-        <a href="#" data-popup="#search" class="header__search _icon-search"></a>
+        <div data-lp class="header__search search-header">
+            <button type="button" class="search-header__icon _icon-search"></button>
+            <form action="#" class="search-header__form">
+                <input autocomplete="off" type="text" name="search" placeholder="Search" class="search-header__input input" />
+                <button type="submit" class="search-header__btn btn">Search</button>
+            </form>
+        </div>
         <button type="button" class="header__icon icon-menu"><span></span></button>
     </div>
 </header>

@@ -27,4 +27,7 @@ textarea {
     &._error {
         border: rem(1) solid rgb(170, 0, 0);
     }
+    @media (max-width: $mobileSmall) {
+        padding: 0px rem(10);
+    }
 }

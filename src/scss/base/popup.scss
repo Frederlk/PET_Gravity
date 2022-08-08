@@ -54,11 +54,10 @@ body::after {
         background-color: $gray_01;
         width: 100%;
         max-width: rem(900);
-        border-radius: rem(20);
-        @include adaptiveValue("padding-top", 50, 40, 767.98, 479.98, 1 1);
-        @include adaptiveValue("padding-bottom", 50, 40, 767.98, 479.98, 1 1);
-        @include adaptiveValue("padding-left", 50, 20, 767.98, 479.98, 1 1);
-        @include adaptiveValue("padding-right", 50, 20, 767.98, 479.98, 1 1);
+        @include adaptiveValue("padding-top", 50, 40, 767.98, 479.98, 1);
+        @include adaptiveValue("padding-bottom", 50, 40, 767.98, 479.98, 1);
+        @include adaptiveValue("padding-left", 50, 20, 767.98, 479.98, 1);
+        @include adaptiveValue("padding-right", 50, 20, 767.98, 479.98, 1);
         .lock & {
             visibility: visible;
         }

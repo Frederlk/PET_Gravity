@@ -18,3 +18,16 @@ if (document.querySelector("._filter-item")) {
         });
     });
 }
+
+if (document.querySelector(".header__search")) {
+    const search = document.querySelector(".header__search");
+
+    document.addEventListener("click", (e) => {
+        const target = e.target;
+        if (target.classList.contains("search-header__icon")) {
+            search.classList.toggle("_active");
+        } else if (!target.closest(".search-header__form") && search.classList.contains("_active")) {
+            search.classList.remove("_active");
+        }
+    });
+}
