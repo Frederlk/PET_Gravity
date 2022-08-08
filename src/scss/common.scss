@@ -1,1 +1,35 @@
-// Заголовки, общие БЄМ блоки и проче...
+.h1 {
+    font-weight: 700;
+    @include adaptiv-font(60, 40, 1);
+    line-height: 70 / 60 * 100%;
+    letter-spacing: -1px;
+    color: #151515;
+}
+.text {
+    font-size: 18px;
+    line-height: 28 / 18 * 100%;
+    color: rgba(34, 34, 34, 1);
+}
+
+.title {
+    font-weight: 600;
+    @include adaptiv-font(40, 30, 1);
+    line-height: 50 / 40 * 100%;
+    letter-spacing: -1px;
+    color: #222222;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32 / 22 * 100%;
+    color: #222222;
+}
+.label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24 / 14 * 100%;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #222222;
+}

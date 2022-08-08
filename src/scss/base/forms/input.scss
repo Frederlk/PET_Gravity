@@ -13,15 +13,19 @@ textarea {
     width: 100%;
     display: block;
     padding: 0px 20px;
-    border: 1px solid #eee;
-    &:focus-visible {
-        outline-offset: rem(-1);
-        outline: white solid rem(1);
+    min-height: 40px;
+    background: #f5f4ff;
+    font-size: 18px;
+    line-height: 28 / 18 * 100%;
+    color: rgba(34, 34, 34, 0.5);
+    border: 1px solid transparent;
+    transition: all 0.3s ease 0s;
+    &._focus {
+        border: 1px solid rgba(34, 34, 34, 0.5);
+        color: #222222;
     }
-    &._form-focus {
-    }
-    &._form-error {
-        color: red;
+    &._error {
+        border: 1px solid rgb(170, 0, 0);
     }
 }
 textarea.input {

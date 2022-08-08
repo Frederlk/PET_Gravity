@@ -1,14 +1,41 @@
 //<BUTTONS (a.btn+tab)>
 // Снипет (HTML): btn
 
-.button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 25px;
+    height: 40px;
+    background: #c6b393;
+    transition: all 0.3s ease 0s;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24 / 14 * 100%;
+    text-align: center;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border: 1px solid #c6b393;
+    &::after {
+        margin: 0px 0px 0px 10px;
+    }
+    @media (min-width: 992px) {
+        &:hover {
+            color: rgba(34, 34, 34, 0.5);
+            background: #f5f4ff;
+        }
+    }
+    &_blue {
+        white-space: nowrap;
+        height: 50px;
+        border: 1px solid #4737ff;
+        background: #4737ff;
+        @media (min-width: $md2+px) {
+            &:hover {
+                background-color: transparent !important;
+                color: #4737ff !important;
+            }
+        }
+    }
 }

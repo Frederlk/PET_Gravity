@@ -1,18 +1,378 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('html/_head.htm',{
-"title":"Главная"
-})
+    @@include('html/_head.htm',{ "title":"Главная" })
 
-<body>
-	<div class="wrapper">
-		@@include('html/_header.htm',{})
-		<main class="page">
-		</main>
-		@@include('html/_footer.htm',{})
-	</div>
-	@@include('html/_popup.htm',{})
-	@@include('html/_js.htm',{})
-</body>
-
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.htm',{})
+            <main class="page">
+                <section class="page__fullscreen fullscreen">
+                    <div class="fullscreen__content">
+                        <div class="fullscreen__slider _swiper">
+                            <div class="fullscreen__slide">
+                                <div class="fullscreen__column column-fullscreen-info">
+                                    <div class="column-fullscreen-info__container _container">
+                                        <div class="column-fullscreen-info__body">
+                                            <h1 class="column-fullscreen-info__title">Work around you and your team</h1>
+                                            <div class="column-fullscreen-info__text">
+                                                From ads that dance or sing to MTV-like commercials, online advertisers are now
+                                                using a new type of technology “rich media” to attract consumers.
+                                            </div>
+                                            <a href="#" class="column-fullscreen-info__btn btn btn_blue">get started</a>
+                                        </div>
+                                        <div class="fullscreen__pagination">
+                                            <span class="fullscreen__number">01</span>
+                                            <div class="fullscreen__progressbar"></div>
+                                            <span class="fullscreen__number">03</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fullscreen__image">
+                                    <img src="img/bg/01.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="fullscreen__slide">
+                                <div class="fullscreen__column column-fullscreen-info">
+                                    <div class="column-fullscreen-info__container _container">
+                                        <div class="column-fullscreen-info__body">
+                                            <h2 class="column-fullscreen-info__title">Well thought with super easy to use</h2>
+                                            <div class="column-fullscreen-info__text">
+                                                As we approached the palace I could see through the great windows of the first
+                                                floor the brilliantly illuminated audience chamber of Than Kosis. The immense hall
+                                                was crowded with nobles and their women.
+                                            </div>
+                                            <a href="#" class="column-fullscreen-info__btn btn btn_blue">get started</a>
+                                        </div>
+                                        <div class="fullscreen__pagination">
+                                            <span class="fullscreen__number">02</span>
+                                            <div class="fullscreen__progressbar"></div>
+                                            <span class="fullscreen__number">03</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fullscreen__image">
+                                    <img src="img/bg/02.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="fullscreen__slide">
+                                <div class="fullscreen__column column-fullscreen-info">
+                                    <div class="column-fullscreen-info__container _container">
+                                        <div class="column-fullscreen-info__body">
+                                            <h2 class="column-fullscreen-info__title">Discover our Work</h2>
+                                            <div class="column-fullscreen-info__text">
+                                                It picks up the words on the page and displays ads that are similar to those
+                                                words. Then when someone either performs an action or clicks on your page you will
+                                                get paid.
+                                            </div>
+                                            <a href="#" class="column-fullscreen-info__btn btn btn_blue">get started</a>
+                                        </div>
+                                        <div class="fullscreen__pagination">
+                                            <span class="fullscreen__number">03</span>
+                                            <div class="fullscreen__progressbar"></div>
+                                            <span class="fullscreen__number">03</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fullscreen__image">
+                                    <img src="img/bg/03.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-fullscreen-info__video-popup popup-video">
+                            <a href="#video" class="popup-video__thumbnail _popup-link">
+                                <div class="popup-video__cover _ibg">
+                                    <img src="img/video.jpg" alt="" />
+                                </div>
+                                <div class="popup-video__control-icon _icon-video"></div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section class="page__about about">
+                    <div class="about__container _container">
+                        <div class="about__column column-about-image">
+                            <div class="column-about-image__image _ibg">
+                                <img src="img/bg/02.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="about__column column-about-info">
+                            <div class="column-about-info__body">
+                                <h2 class="column-about-info__title">
+                                    We solve digital problems with an outstanding creative flare
+                                </h2>
+                                <div class="column-about-info__text">
+                                    <p>
+                                        The best time to view the moon, obviously, is at night when there are few clouds and the
+                                        weather is accommodating for a long and lasting study.
+                                    </p>
+                                    <p>
+                                        For most of us, the idea of astronomy is something we directly connect to “stargazing”,
+                                        telescopes and seeing magnificent displays in the heavens.
+                                    </p>
+                                </div>
+                                <div class="column-about-info__bottom">
+                                    <div class="column-about-info__avatar _ibg">
+                                        <img src="img/avatar.jpg" alt="" />
+                                    </div>
+                                    <div class="column-about-info__person">
+                                        <div class="column-about-info__name">Denis Shepovalov</div>
+                                        <div class="column-about-info__job">Co-Founder & CEO</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="page__services services">
+                    <div class="services__top">
+                        <div class="services__top-container _container">
+                            <h3 class="services__subject">— Services</h3>
+                            <div class="services__row">
+                                <div class="services__column">
+                                    <h2 class="services__title">
+                                        We love work hard and explore new things that’s why we cover lot of things. Check our
+                                        service list and view details
+                                    </h2>
+                                </div>
+                                <div class="services__column">
+                                    <ul class="services__list">
+                                        <li><a href="" class="services__item">Multimedia</a></li>
+                                        <li><a href="" class="services__item">Interactive design</a></li>
+                                        <li><a href="" class="services__item">Packaging</a></li>
+                                        <li><a href="" class="services__item">Branding</a></li>
+                                    </ul>
+                                    <ul class="services__list">
+                                        <li><a href="" class="services__item">Creative Strategy</a></li>
+                                        <li><a href="" class="services__item">UI/UX </a></li>
+                                        <li><a href="" class="services__item">Coding</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services__bottoom">
+                        <div class="services__bottoom-container _container">
+                            <div class="services__slider _swiper">
+                                <div class="services__slide">
+                                    <a href="#" class="services__image _ibg">
+                                        <img src="img/bg/03.jpg" alt="" />
+                                    </a>
+                                    <a href="#" class="services__link _icon-video"></a>
+                                </div>
+                                <div class="services__slide">
+                                    <a href="#" class="services__image _ibg">
+                                        <img src="img/bg/04.jpg" alt="" />
+                                    </a>
+                                    <a href="#" class="services__link _icon-video"></a>
+                                </div>
+                                <div class="services__slide">
+                                    <a href="#" class="services__image _ibg">
+                                        <img src="img/bg/05.jpg" alt="" />
+                                    </a>
+                                    <a href="#" class="services__link _icon-video"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services__container-navigation _container">
+                        <div class="services__navigation">
+                            <div class="services__arrow services__arrow_prev">
+                                <img src="img/icons/arrow-prev.png" alt="" />
+                            </div>
+                            <div class="services__arrow services__arrow_next">
+                                <img src="img/icons/arrow-next.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="page__easy easy">
+                    <div class="easy__content">
+                        <div class="easy__column easy-images">
+                            <div class="easy-images__body">
+                                <div class="easy-images__bg _ibg">
+                                    <img src="img/bg/06.jpg" alt="" />
+                                    <div class="easy-images__picture _ibg">
+                                        <img src="img/bg/05.jpg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="easy__column easy-info">
+                            <div class="easy-info__container _container">
+                                <div class="easy-info__body">
+                                    <h2 class="easy-info__title">Well thought with super easy to use</h2>
+                                    <div class="easy-info__text">
+                                        As we approached the palace I could see through the great windows of the first floor the
+                                        brilliantly illuminated audience chamber of Than Kosis. The immense hall was crowded with
+                                        nobles and their women.
+                                    </div>
+                                    <div class="easy-info__bonus">
+                                        <div class="easy-info__icon">
+                                            <img src="img/icons/100.png" alt="" />
+                                        </div>
+                                        <div class="easy-info__label">Ultimate Result</div>
+                                    </div>
+                                    <div class="easy-info__bonus">
+                                        <div class="easy-info__icon">
+                                            <img src="img/icons/pack.png" alt="" />
+                                        </div>
+                                        <div class="easy-info__label">Minimal Design</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="page__works works">
+                    <div class="works__container _container">
+                        <div class="works__top">
+                            <h3 class="works__subject">— our works</h3>
+                            <div class="works__row">
+                                <div class="works__column">
+                                    <h2 class="works__title">Discover our Work</h2>
+                                </div>
+                                <div class="works__column">
+                                    <nav class="works__filter _filter">
+                                        <ul class="works__list">
+                                            <li class="works__link" data-filter="all">All</li>
+                                            <li class="works__link" data-filter="branding">Branding</li>
+                                            <li class="works__link" data-filter="web">Web</li>
+                                            <li class="works__link" data-filter="development">Development</li>
+                                            <li class="works__link" data-filter="films">Films</li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="works__body">
+                            <div class="works__gallery">
+                                <div class="works__gallery-column _filter-item films development web">
+                                    <a href="#" class="works__gallery-link _ibg">
+                                        <img src="img/gallery/01.jpg" alt="" />
+                                        <span href="#" class="works__gallery-play _icon-video"></span>
+                                    </a>
+                                </div>
+                                <div class="works__gallery-column _filter-item development web">
+                                    <a href="#" class="works__gallery-link _ibg">
+                                        <img src="img/gallery/02.png" alt="" />
+                                        <span href="#" class="works__gallery-play _icon-video"></span>
+                                    </a>
+                                </div>
+                                <div class="works__gallery-column _filter-item web branding">
+                                    <a href="#" class="works__gallery-link _ibg">
+                                        <img src="img/gallery/03.jpg" alt="" />
+                                        <span href="#" class="works__gallery-play _icon-video"></span>
+                                    </a>
+                                </div>
+                                <div class="works__gallery-column _filter-item development films">
+                                    <a href="#" class="works__gallery-link _ibg">
+                                        <img src="img/gallery/04.png" alt="" />
+                                        <span href="#" class="works__gallery-play _icon-video"></span>
+                                    </a>
+                                </div>
+                                <div class="works__gallery-column _filter-item branding development">
+                                    <a href="#" class="works__gallery-link _ibg">
+                                        <img src="img/gallery/05.jpg" alt="" />
+                                        <span href="#" class="works__gallery-play _icon-video"></span>
+                                    </a>
+                                </div>
+                                <div class="works__gallery-column _filter-item branding films">
+                                    <a href="#" class="works__gallery-link _ibg">
+                                        <img src="img/gallery/06.jpg" alt="" />
+                                        <span href="#" class="works__gallery-play _icon-video"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="works__bottom">
+                            <div class="works__bottom-text">
+                                It picks up the words on the page and displays ads that are similar to those words. Then when
+                                someone either performs an action or clicks on your page you will get paid.
+                            </div>
+                            <a href="#" class="works__bottom-btn btn btn_blue">see our works</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="page__testimonials testimonials">
+                    <div class="testimonials__container _container">
+                        <div class="testimonials__slider _swiper">
+                            <div class="testimonials__slide">
+                                <div class="testimonials__column testimonials-info">
+                                    <div class="testimonials-info__top">
+                                        <h3 class="testimonials-info__label">— Testimonials</h3>
+                                        <h2 class="testimonials-info__title">
+                                            "For most of us, the idea of astronomy is something we directly connect to
+                                            “stargazing”, telescopes and seeing magnificent displays in the heavens."
+                                        </h2>
+                                    </div>
+                                    <div class="testimonials-info__bottom">
+                                        <div class="testimonials-info__name">Denis Shepovalov</div>
+                                        <div class="testimonials-info__job">Co-Founder & CEO</div>
+                                    </div>
+                                </div>
+                                <div class="testimonials__column testimonials-person">
+                                    <div class="testimonials-person__image _ibg">
+                                        <img src="img/avatar.jpg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonials__slide">
+                                <div class="testimonials__column testimonials-info">
+                                    <div class="testimonials-info__top">
+                                        <h3 class="testimonials-info__label">— Testimonials</h3>
+                                        <h2 class="testimonials-info__title">
+                                            "Professionals in their craft! All products were super great with strong attention to
+                                            details, and overall vibe"
+                                        </h2>
+                                    </div>
+                                    <div class="testimonials-info__bottom">
+                                        <div class="testimonials-info__name">Polina Kuzina</div>
+                                        <div class="testimonials-info__job">Manager at Craftwork</div>
+                                    </div>
+                                </div>
+                                <div class="testimonials__column testimonials-person">
+                                    <div class="testimonials-person__image _ibg">
+                                        <img src="img/girl.jpg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials__navigation">
+                            <div class="testimonials__arrow testimonials__arrow_prev">
+                                <img src="img/icons/arrow-prev.png" alt="" />
+                            </div>
+                            <div class="testimonials__arrow testimonials__arrow_next">
+                                <img src="img/icons/arrow-next.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="page__clients clients">
+                    <div class="clients__container _container">
+                        <div class="clients__top">
+                            <div class="clients__top-column">
+                                <h2 class="clients__title">Our Clients</h2>
+                            </div>
+                            <div class="clients__top-column">
+                                <h3 class="clients__label">— We worked with</h3>
+                                <div class="clients__text">
+                                    Our favorite brands are our friends! We help them to achieve their goals, they help us to stay
+                                    sharp.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clients__bottom">
+                            <div class="clients__item _icon-xiaomi"></div>
+                            <div class="clients__item _icon-tinder"></div>
+                            <div class="clients__item _icon-apple"></div>
+                            <div class="clients__item _icon-nike"></div>
+                            <div class="clients__item _icon-amd"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.htm',{})
+        </div>
+        @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+    </body>
 </html>
