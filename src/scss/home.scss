@@ -387,7 +387,7 @@
     @include adaptiveValue("margin-bottom", 50, 20, 1110, 479.98, 1);
     @media (min-width: $mobile) {
         overflow: visible !important;
-        width: percent(625, 1360);
+        width: percent(825, 1110);
     }
 
     &__wrapper {
@@ -462,11 +462,9 @@
 //========================================================================================================================================================
 
 .easy {
-    &__content {
-        display: flex;
-        @media (max-width: $mobile) {
-            flex-wrap: wrap;
-        }
+    display: flex;
+    @media (max-width: $mobile) {
+        flex-wrap: wrap;
     }
 
     &__column {
@@ -478,27 +476,28 @@
 }
 .easy-images {
     @media (max-width: $mobile) {
-        margin-bottom: 10px;
+        margin-bottom: rem(10);
     }
     &__body {
-        display: flex;
+        @media (min-width: $mobile) {
+            display: flex;
+        }
     }
-    &__bg {
+    &__bg-ibg {
         position: relative;
-        flex: 0 1 42%;
-        @include adaptiveValue("height", 420, 250, 1110, 479.98, 1);
-        @media (max-width: $mobile) {
-            flex: 1 1 100%;
+        @include adaptiveValue("height", 420, 250, 767.98, 479.98, 1);
+        @media (min-width: $mobile) {
+            flex: 0 1 42%;
         }
     }
 
-    &__picture {
+    &__picture-ibg {
         position: absolute;
         @include adaptiveValue("width", 350, 200, 1110, 479.98, 1);
         height: 107%;
-        @include adaptiveValue("top", 100, 0, 1110, 479.98, 1);
+        @include adaptiveValue("top", 100, 20, 1110, 991.98, 1);
         right: -16.7%;
-        filter: drop-shadow(30px 80px 180px rgba(0, 0, 0, 0.25));
+        box-shadow: rem(30) rem(80) rem(180) rgba(0, 0, 0, 0.25);
         @media (max-width: $mobile) {
             height: 100%;
             top: 0;
@@ -509,29 +508,27 @@
         }
     }
 }
+
 .easy-info {
-    @include adaptiveValue("margin-top", 40, 0, 1110, 479.98, 1);
-    transform: translate(-100%, 0px);
-    @media (max-width: $tablet) {
-        margin-top: 20px;
-    }
-    @media (max-width: $mobile) {
-        transform: translate(0px, 0px);
+    @include adaptiveValue("margin-top", 40, 20, 1110, 991.98, 1);
+    @media (min-width: $mobile) {
+        transform: translate(-100%, 0px);
     }
     &__container {
         display: flex;
         justify-content: flex-end;
     }
     &__body {
-        flex: 0 1 43%;
+        @media (min-width: $mobile) {
+            flex: 0 1 43%;
+        }
         @media (max-width: $mobile) {
-            flex: 1 1 100%;
             text-align: center;
         }
     }
     &__title {
         @extend %title;
-        margin: 0px 0px 15px 0px;
+        margin-bottom: rem(15);
     }
 
     &__text {
@@ -540,10 +537,21 @@
         @include adaptiveValue("margin-bottom", 60, 20, 1110, 479.98, 1);
     }
 
+    &__bottom {
+        @media (max-width: $mobile) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: rem(40);
+            flex-wrap: wrap;
+        }
+    }
+
     &__bonus {
         display: flex;
         align-items: center;
         @include adaptiveValue("margin-bottom", 30, 20, 1110, 479.98, 1);
+        @include adaptiveValue("gap", 30, 20, 991.98, 767.98, 1);
         @media (max-width: $mobile) {
             justify-content: center;
         }
@@ -554,9 +562,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 54px;
-        height: 54px;
-        flex: 0 0 54px;
+        height: rem(54);
+        width: rem(54);
+        flex: 0 0 rem(54);
         border-radius: 50%;
         overflow: hidden;
         img {
@@ -565,7 +573,6 @@
     }
 
     &__label {
-        margin: 0px 0px 0px 30px;
         @extend %label;
     }
 }
