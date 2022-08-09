@@ -220,7 +220,6 @@
 //========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
-//========================================================================================================================================================
 
 .about {
     &__container {
@@ -303,7 +302,6 @@
     }
 }
 
-//========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
@@ -459,7 +457,6 @@
 //========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
-//========================================================================================================================================================
 
 .easy {
     display: flex;
@@ -474,6 +471,7 @@
         }
     }
 }
+
 .easy-images {
     @media (max-width: $mobile) {
         margin-bottom: rem(10);
@@ -558,7 +556,7 @@
     }
 
     &__icon {
-        background: $light_05;
+        background-color: $light_05;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -580,7 +578,6 @@
 //========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
-//========================================================================================================================================================
 
 .works {
     &__container {
@@ -592,45 +589,29 @@
     &__subject {
         @extend %label;
         opacity: 0.7;
-        @include adaptiveValue("margin-bottom", 40, 20, 1110, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 40, 20, 1110, 767.98, 1);
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
     }
 
     &__row {
         display: flex;
         justify-content: space-between;
-        @include adaptiveValue("margin-bottom", 100, 30, 1110, 479.98, 1);
+        align-items: center;
+        @include adaptiveValue("gap", 40, 20, 1110, 991.98, 1);
+        @include adaptiveValue("margin-bottom", 100, 30, 1110, 767.98, 1);
         @media (max-width: $mobile) {
             flex-wrap: wrap;
             justify-content: center;
         }
     }
 
-    &__column {
-        &:first-child {
-            flex: 0 1 540px;
-            margin: 0px 20px 0px 0px;
-            @media (max-width: $mobile) {
-                flex: 1 1 100%;
-                margin: 0px 0px 20px 0px;
-            }
-        }
-        &:last-child {
-            flex: 0 1 470px;
-            margin: 0px 0px 0px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            @media (max-width: $mobile) {
-                margin: 0;
-                flex: 1 1 100%;
-            }
-            @media (max-width: $mobileSmall) {
-                flex-wrap: wrap;
-            }
-        }
-    }
-
     &__title {
+        flex: 0 1 rem(540);
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+        }
         @extend %title;
         @media (max-width: $mobile) {
             text-align: center;
@@ -638,32 +619,27 @@
     }
 
     &__filter {
-        flex: 1 1 100%;
+        flex: 0 1 rem(470);
     }
 
     &__list {
         display: flex;
-        justify-content: space-between;
-        li {
-            &:not(:last-child) {
-                margin-right: rem(12);
-            }
-        }
+        align-items: center;
+        justify-content: flex-end;
+        gap: rem(25);
+        @include adaptiveValue("gap", 25, 12, 1110, 991.98, 1);
         @media (max-width: $mobile) {
             flex-wrap: wrap;
-            justify-content: space-around;
-            li {
-                margin: 0px 10px 10px 10px;
-            }
+            justify-content: center;
         }
     }
 
     &__link {
         @extend %label;
         opacity: 0.7;
-        transition: all 0.3s ease 0s;
+        transition: color 0.3s ease 0s, opacity 0.3s ease 0s;
         cursor: pointer;
-        @media (min-width: $tablet) {
+        @media (any-hover: hover) {
             &:hover {
                 color: $primary_02;
                 opacity: 1;
@@ -680,46 +656,47 @@
     }
 
     &__gallery {
-        display: flex;
-        margin: 0px -15px;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include adaptiveValue("gap", 30, 10, 991.98, 479.98, 1);
         @media (max-width: $mobile) {
-            margin: 0px -5px;
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
     &__gallery-column {
-        padding: 0px 15px;
-        margin: 0px 0px 30px 0px;
-        flex: 0 1 33.333%;
+        z-index: 2;
         position: relative;
-        @include adaptiveValue("height", 450, 200, 1110, 479.98, 1);
         &._hide {
             display: none !important;
         }
-
-        @media (max-width: $mobile) {
-            flex: 0 1 50%;
-            padding: 0px 5px;
-            margin: 0px 0px 10px 0px;
-            display: none;
-            &:nth-child(-n + 10) {
-                display: block;
-            }
-        }
+        // @media (max-width: $mobile) {
+        //     display: none;
+        //     &:nth-child(-n + 10) {
+        //         display: block;
+        //     }
+        // }
     }
 
-    &__gallery-link {
-        position: absolute;
-        width: calc(100% - 30px);
-        height: 100%;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, 0px);
-        transition: all 1s ease 0s;
-        @media (min-width: $tablet) {
+    &__gallery-link-ibg {
+        position: relative;
+        display: block;
+        @include adaptiveValue("height", 450, 200, 1110, 479.98, 1);
+        transition: margin-top 1s ease 0s, box-shadow 1s ease 0s;
+        box-shadow: rem(-30) rem(80) rem(200) rgba(0, 0, 0, 0);
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        @media (any-hover: hover) {
             &:hover {
-                transform: translate(-50%, -20px);
+                box-shadow: rem(-30) rem(80) rem(200) rgba(0, 0, 0, 0.25);
+                @include adaptiveValue("margin-top", -20, -5, 991.98, 479.98, 1);
                 .works__gallery-play {
                     opacity: 1;
                     visibility: visible;
@@ -732,10 +709,8 @@
                 visibility: visible;
             }
         }
-        @media (max-width: $mobile) {
-            width: calc(100% - 10px);
-        }
     }
+
     .works__gallery-play {
         position: absolute;
         display: flex;
@@ -750,11 +725,11 @@
         left: 50%;
         cursor: pointer;
         transform: translate(-50%, -50%);
-        transition: all 0.3s ease 0s;
+        transition: background-color 0.3s ease 0s, opacity 0.3s ease 0s, visibility 0.3s ease 0s;
         opacity: 0;
         visibility: hidden;
         &::before {
-            transition: all 0.3s ease 0s;
+            transition: color 0.3s ease 0s;
         }
         @media (any-hover: hover) {
             &:hover {
@@ -767,32 +742,32 @@
     }
 
     &__bottom {
-        display: flex;
-        justify-content: space-between;
+        @media (min-width: $mobile) {
+            display: flex;
+            gap: rem(20);
+            justify-content: space-between;
+        }
         @media (max-width: $mobile) {
-            flex-wrap: wrap;
             text-align: center;
-            justify-content: center;
         }
     }
 
     &__bottom-text {
-        flex: 0 1 730px;
+        @media (min-width: $mobile) {
+            flex: 0 1 rem(730);
+        }
         @extend %text;
         opacity: 0.7;
-        margin: 0px 20px 0px 0px;
         @media (max-width: $mobile) {
-            flex: 1 1 100%;
-            margin: 0px 0px 20px 0px;
+            margin-bottom: rem(20);
         }
     }
 
     &__bottom-btn {
-        padding: 0px 30px;
+        padding: 0px rem(30);
     }
 }
 
-//========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
@@ -851,6 +826,7 @@
         }
     }
 }
+
 .testimonials-info {
     flex: 0 1 540px;
     margin: 0px 20px 0px 0px;
@@ -894,6 +870,7 @@
         opacity: 0.7;
     }
 }
+
 .testimonials-person {
     flex: 0 1 445px;
     margin: 0px 0px 0px 20px;
@@ -908,7 +885,6 @@
     }
 }
 
-//========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
 //========================================================================================================================================================
