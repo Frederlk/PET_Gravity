@@ -859,47 +859,42 @@
 
 .clients {
     background-color: $light_06;
-    @include adaptiveValue("padding-top", 100, 40, 1110, 479.98, 1);
-    @include adaptiveValue("padding-bottom", 115, 20, 1110, 479.98, 1);
+    @include adaptiveValue("padding-top", 100, 40, 1110, 767.98, 1);
+    @include adaptiveValue("padding-bottom", 115, 40, 1110, 767.98, 1);
     &__container {
     }
 
     &__top {
-        display: flex;
-        justify-content: space-between;
-        @include adaptiveValue("margin-bottom", 70, 30, 1110, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 70, 30, 1110, 767.98, 1);
+        @media (min-width: $mobile) {
+            display: flex;
+            justify-content: space-between;
+            gap: rem(20);
+        }
         @media (max-width: $mobile) {
-            flex-wrap: wrap;
             text-align: center;
-        }
-    }
-
-    &__top-column {
-        &:first-child {
-            flex: 0 1 470px;
-            margin: 0px 20px 0px 0px;
-            @media (max-width: $mobile) {
-                flex: 1 1 100%;
-                margin: 0px 0px 20px 0px;
-            }
-        }
-        &:last-child {
-            flex: 0 1 445px;
-            margin: 0px 0px 0px 20px;
-            @media (max-width: $mobile) {
-                flex: 1 1 100%;
-                margin: 0;
-            }
         }
     }
 
     &__title {
         @extend %title;
+        @media (min-width: $mobile) {
+            flex: 0 1 rem(470);
+        }
+        @media (max-width: $mobile) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__info {
+        @media (min-width: $mobile) {
+            flex: 0 1 rem(445);
+        }
     }
 
     &__label {
         @extend %label;
-        @include adaptiveValue("margin-bottom", 20, 10, 1110, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 20, 10, 1110, 767.98, 1);
     }
 
     &__text {
@@ -908,31 +903,30 @@
     }
 
     &__bottom {
-        margin: 0px -10px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        @media (max-width: $mobileSmall) {
-            flex-wrap: wrap;
+        gap: rem(20);
+        @media (max-width: $mobile) {
             justify-content: center;
+            flex-wrap: wrap;
         }
     }
 
     &__item {
-        margin: 0px 10px 10px 10px;
         @include adaptiveValue("font-size", 60, 40, 1110, 479.98, 1);
         opacity: 0.15;
-        transition: all 0.3s ease 0s;
+        display: flex;
         justify-content: center;
         align-items: center;
-        display: flex;
-        @media (min-width: $tablet) {
+        transition: opacity 0.3s ease 0s;
+        @media (any-hover: hover) {
             &:hover {
                 opacity: 1;
             }
         }
-        @media (max-width: $mobileSmall) {
-            flex: 0 1 50%;
-            margin: 0px 0px 20px 0px;
+        @media (max-width: $mobile) {
+            flex: 0 1 25%;
         }
     }
 }
