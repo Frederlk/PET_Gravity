@@ -1,27 +1,7 @@
-/*
-Документация по работе в шаблоне: 
-Документация слайдера: https://swiperjs.com/
-Сниппет(HTML): swiper
-*/
-
-// Подключаем слайдер Swiper из node_modules
-// При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
-// Пример: { Navigation, Autoplay }
 import Swiper, { Navigation, Keyboard, Lazy, Autoplay, Pagination, EffectFade } from "swiper";
-/*
-Основниые модули слайдера:
-Navigation, Pagination, Autoplay, 
-EffectFade, Lazy, Manipulation
-Подробнее смотри https://swiperjs.com/
-*/
 
-// Стили Swiper
 // Базовые стили
 import "../../scss/base/swiper.scss";
-// Полный набор стилей из scss/libs/swiper.scss
-// import "../../scss/libs/swiper.scss";
-// Полный набор стилей из node_modules
-// import 'swiper/css';
 
 // Инициализация слайдеров
 function initSliders() {
@@ -173,7 +153,5 @@ function initSliders() {
 }
 
 window.addEventListener("load", function (e) {
-    // Запуск инициализации слайдеров
     initSliders();
-    // Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
 });
