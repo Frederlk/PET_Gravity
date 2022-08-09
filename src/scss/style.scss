@@ -5,7 +5,7 @@
 
 // Подключение шрифтов ===========================================================================================================================================================================================================================================================================
 //&display=swap - добавить при подключении через плагин
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:regular,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:regular,500,800,700&display=swap");
 
 // Подключить если есть локальные файлы шрифтов
 @import "fonts/fonts";
@@ -40,7 +40,7 @@ $mainColor: $dark_01; // Цвет шрифта по умолчанию
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1360;
+$maxWidth: 1380;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
 $maxWidthContainer: 1110;
 // Общий отступ у контейнера
@@ -159,24 +159,24 @@ body {
 .page {
     &__fullscreen {
         transition: margin-top 0.8s ease 0s;
-        @include adaptiveValue("margin-top", 142, 60, 1110, 767.98, 1);
+        @include adaptiveValue("margin-top", 142, 80, 1110, 767.98, 1);
     }
     &__about {
-        @include adaptiveValue("padding-top", 220, 60, 1110, 767.98, 1);
+        @include adaptiveValue("padding-top", 220, 80, 1110, 767.98, 1);
     }
     &__services {
-        @include adaptiveValue("padding-top", 140, 60, 1110, 767.98, 1);
+        @include adaptiveValue("padding-top", 140, 80, 1110, 767.98, 1);
     }
     &__easy {
-        @include adaptiveValue("padding-top", 180, 60, 1110, 767.98, 1);
+        @include adaptiveValue("padding-top", 180, 80, 1110, 767.98, 1);
     }
     &__works {
-        @include adaptiveValue("padding-top", 280, 60, 1110, 767.98, 1);
+        @include adaptiveValue("padding-top", 280, 80, 1110, 767.98, 1);
     }
     &__testimonials {
-        @include adaptiveValue("padding-top", 250, 60, 1110, 767.98, 1);
+        @include adaptiveValue("padding-top", 250, 80, 1110, 767.98, 1);
+        @include adaptiveValue("padding-bottom", 180, 80, 1110, 767.98, 1);
     }
     &__clients {
-        @include adaptiveValue("padding-top", 180, 60, 1110, 767.98, 1);
     }
 }
