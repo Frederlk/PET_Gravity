@@ -2,9 +2,8 @@
 // Подключение списка активных модулей
 import { flsModules } from "../modules.js";
 // Вспомогательные функции
-import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
+import { _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
 // Модуль прокрутки к блоку
-import { gotoBlock } from "../scroll/gotoblock.js";
 //================================================================================================================================================================================================================================================================================================================================
 
 /*
@@ -202,9 +201,6 @@ export function formSubmit(options = { validate: true }) {
         } else {
             e.preventDefault();
             const formError = form.querySelector("._form-error");
-            if (formError && form.hasAttribute("data-goto-error")) {
-                gotoBlock(formError, true, 1000);
-            }
         }
     }
     // Действия после отправки формы

@@ -77,6 +77,25 @@
         @media (max-width: $mobileSmall) {
             flex-wrap: wrap;
         }
+        &._form-error {
+            position: relative;
+            @media (max-width: $mobileSmall) {
+                margin-bottom: rem(5);
+            }
+            .form__error {
+                position: absolute;
+                margin-top: rem(5);
+                top: 100%;
+                right: 0;
+                color: red;
+                @extend %label;
+                font-size: rem(10);
+                @media (max-width: $mobileSmall) {
+                    left: 0;
+                    right: auto;
+                }
+            }
+        }
     }
 
     &__email {

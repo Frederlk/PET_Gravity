@@ -9,8 +9,6 @@ import * as flsFunctions from "./files/functions.js";
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 /* (i) необходимо для корректного отображения webp из css  */
 flsFunctions.isWebp();
-/* Добавление loaded для HTML после полной загрузки страницы */
-flsFunctions.addLoadedClass();
 /* Модуль для работы с меню (Бургер) */
 flsFunctions.menuInit();
 
@@ -55,17 +53,8 @@ import "./files/sliders.js";
 // Сниппет(HTML):
 import "./files/scroll/lazyload.js";
 
-// Наблюдатель за объектами c атрибутом data-watch
-// Документация: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
-// Сниппет(HTML):
-// import './libs/watcher.js'
-
 // Функции работы скроллом
 import * as flsScroll from "./files/scroll/scroll.js";
-
-// Плавная навигация по странице
-// Документация: https://template.fls.guru/template-docs/modul-plavnoj-navigacii-po-stranice.html
-flsScroll.pageNavigation();
 
 // Функционал добавления классов к хедеру при прокрутке
 // Документация: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html

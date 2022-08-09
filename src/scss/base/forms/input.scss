@@ -24,8 +24,8 @@ textarea {
         border: rem(1) solid rgba(34, 34, 34, 0.5);
         color: $dark_01;
     }
-    &._error {
-        border: rem(1) solid rgb(170, 0, 0);
+    &._form-error {
+        border: rem(1) solid red;
     }
     @media (max-width: $mobileSmall) {
         padding: 0px rem(10);
