@@ -9,111 +9,84 @@
                 <section class="page-blog__topic topic">
                     <div class="topic__container">
                         <div class="topic__top">
-                            <div class="topic__title">
-                                <h1>Branding Do You Know Who You Are</h1>
-                            </div>
+                            <h1 class="topic__title">Branding Do You Know Who You Are</h1>
                             <div class="topic__socials">
-                                <a href="" class="topic__item _icon-twitter"></a>
-                                <a href="" class="topic__item _icon-linkedin"></a>
-                                <a href="" class="topic__item _icon-google"></a>
-                                <a href="" class="topic__item _icon-facebook"></a>
+                                <a href="@twitter" target="_blank" class="topic__item _icon-twitter"></a>
+                                <a href="@linkedin" target="_blank" class="topic__item _icon-linkedin"></a>
+                                <a href="@google" target="_blank" class="topic__item _icon-google"></a>
+                                <a href="@facebook" target="_blank" class="topic__item _icon-facebook"></a>
                             </div>
                         </div>
                         <div class="topic__body">
                             <div class="topic__image-ibg">
-                                <img src="@img/bg/03.jpg" alt="" />
+                                <img src="@img/bg/03.jpg" alt="Branding Do You Know Who You Are" />
                             </div>
-                            <div class="topic__text">
+                            <p class="topic__text">
                                 As we approached the palace I could see through the great windows of the first floor into the
                                 brilliantly illuminated audience chamber of Than Kosis. The immense hall was crowded with nobles
                                 and their women, as though some important function was in progress.
-                            </div>
+                            </p>
                         </div>
                     </div>
                 </section>
+
                 <div class="page-blog__explore explore">
                     <div class="explore__container">
                         <div class="explore__top">
-                            <div class="explore__column">
-                                <div class="explore__image-ibg">
-                                    <img src="@img/blog/01.jpg" alt="" />
-                                </div>
+                            <div class="explore__image-ibg">
+                                <img src="@img/blog/01.jpg" alt="01" />
+                                <button class="explore__gallery-play _icon-video"></button>
                             </div>
-                            <div class="explore__column">
-                                <div href="#" class="explore__image-ibg">
-                                    <img src="@img/blog/02.jpg" alt="" />
-                                </div>
-                                <a href="#" class="explore__gallery-play _icon-video"></a>
+                            <div href="#" class="explore__image-ibg">
+                                <img src="@img/blog/02.jpg" alt="02" />
+                                <button class="explore__gallery-play _icon-video"></button>
                             </div>
-                            <div class="explore__column">
-                                <div class="explore__image-ibg">
-                                    <img src="@img/blog/03.jpg" alt="" />
-                                </div>
+                            <div class="explore__image-ibg">
+                                <img src="@img/blog/03.jpg" alt="03" />
+                                <button class="explore__gallery-play _icon-video"></button>
                             </div>
                         </div>
                         <div class="explore__bottom">
-                            <div class="explore__text">
-                                <p>
-                                    As we approached the palace I could see through the great windows of the first floor the
-                                    brilliantly illuminated audience chamber of Than Kosis.
-                                </p>
-                            </div>
+                            <p class="explore__text">
+                                As we approached the palace I could see through the great windows of the first floor the
+                                brilliantly illuminated audience chamber of Than Kosis.
+                            </p>
                             <a href="#" class="explore__btn">explore</a>
                         </div>
                     </div>
                 </div>
+
                 <section class="page-blog__awards awards">
                     <div class="awards__container">
-                        <div class="awards__column">
-                            <h2 class="awards__subtitle">Awards</h2>
-                        </div>
-                        <div class="awards__column awards-item">
+                        <span class="awards__subtitle">
+                            <img src="@img/icons/Awwwards.svg" alt="Awwwards" />
+                        </span>
+                        <div class="awards__item awards-item">
                             <div class="awards-item__row">
                                 <h3 class="awards-item__title">Site of the Day</h3>
                                 <div class="awards-item__info">
-                                    <div class="awards-item__label">Singleton UI Kit</div>
-                                    <div class="awards-item__text">
+                                    <h6 class="awards-item__label">Singleton UI Kit</h6>
+                                    <p class="awards-item__text">
                                         Application that helps to find nearest sport centres in your area
-                                    </div>
+                                    </p>
                                 </div>
                                 <div class="awards-item__year">2018</div>
                             </div>
                             <div class="awards-item__row">
                                 <h3 class="awards-item__title">Best Navigation</h3>
                                 <div class="awards-item__info">
-                                    <div class="awards-item__label">Midleton Headers</div>
-                                    <div class="awards-item__text">
+                                    <h6 class="awards-item__label">Midleton Headers</h6>
+                                    <p class="awards-item__text">
                                         Application that helps to find nearest sport centres in your area
-                                    </div>
+                                    </p>
                                 </div>
                                 <div class="awards-item__year">2018</div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="page-blog__clients clients">
-                    <div class="clients__container">
-                        <div class="clients__top">
-                            <div class="clients__top-column">
-                                <h2 class="clients__title">Our Clients</h2>
-                            </div>
-                            <div class="clients__top-column">
-                                <h3 class="clients__label">— We worked with</h3>
-                                <div class="clients__text">
-                                    Our favorite brands are our friends! We help them to achieve their goals, they help us to stay
-                                    sharp.
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="clients__bottom">
-                            <li class="clients__item _icon-xiaomi"></li>
-                            <li class="clients__item _icon-tinder"></li>
-                            <li class="clients__item _icon-apple"></li>
-                            <li class="clients__item _icon-nike"></li>
-                            <li class="clients__item _icon-amd"></li>
-                        </ul>
-                    </div>
-                </section>
+
+                @@include('html/_clients.htm',{})
             </main>
             @@include('html/_footer.htm',{})
         </div>

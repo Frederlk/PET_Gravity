@@ -1,14 +1,14 @@
 .page-blog {
     &__topic {
-        @include adaptiveValue("padding-top", 162, 80, 1110, 479.98, 1);
-        @include adaptiveValue("margin-bottom", 135, 50, 1110, 479.98, 1);
+        @include adaptiveValue("padding-top", 162, 80, 1110, 767.98, 1);
+        @include adaptiveValue("margin-bottom", 135, 80, 1110, 767.98, 1);
     }
     &__explore {
-        @include adaptiveValue("margin-bottom", 160, 60, 1110, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 160, 80, 1110, 767.98, 1);
     }
 
     &__awards {
-        @include adaptiveValue("margin-bottom", 120, 40, 1110, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 120, 80, 1110, 767.98, 1);
     }
 }
 
@@ -22,7 +22,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        @include adaptiveValue("margin-bottom", 86, 30, 1110, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 86, 30, 1110, 767.98, 1);
         @media (max-width: $mobile) {
             text-align: center;
             flex-wrap: wrap;
@@ -31,36 +31,38 @@
     }
 
     &__title {
-        flex: 0 1 540px;
         @extend %h1;
-        @include adaptiveValue("margin-right", 20, 10, 1110, 479.98, 0);
+        @media (min-width: $mobile) {
+            flex: 0 1 rem(540);
+        }
         @media (max-width: $mobile) {
-            flex: 1 1 100%;
-            margin: 0px 0px 20px 0px;
+            margin-bottom: rem(20);
         }
     }
 
     &__socials {
-        display: flex;
-        @include adaptiveValue("margin-left", 20, 10, 1110, 479.98, 0);
-        @include adaptiveValue("margin-bottom", 14, 0, 1110, 479.98, 1);
+        display: grid;
+        grid-template-columns: repeat(4, rem(24));
+        gap: rem(10);
+        @media (min-width: $mobile) {
+            margin-bottom: rem(14);
+        }
         @media (max-width: $mobile) {
-            margin: 0;
-            flex: 1 1 100%;
-            justify-content: center;
+            margin: 0px auto;
         }
     }
 
     &__item {
-        margin: 0px 0px 0px 10px;
-        opacity: 1;
-        transition: all 0.3s ease 0s;
-        &:first-child {
-            margin: 0;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: rem(14);
+        color: $mainColor;
+        opacity: 0.4;
+        transition: opacity 0.3s ease 0s;
         @media (any-hover: hover) {
             &:hover {
-                opacity: 0.4;
+                opacity: 1;
             }
         }
     }
@@ -68,12 +70,9 @@
     &__body {
     }
 
-    &__image {
-        padding: 0px 0px 52.3% 0px;
-        @include adaptiveValue("margin-bottom", 40, 20, 1110, 479.98, 1);
-        @media (max-width: $mobile) {
-            min-height: 250px;
-        }
+    &__image-ibg {
+        @include adaptiveValue("height", 580, 300, 991.98, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 40, 20, 1110, 767.98, 1);
     }
 
     &__text {
@@ -92,30 +91,28 @@
     }
 
     &__top {
-        display: flex;
-        margin: 0px -15px 15px -15px;
-        @media (max-width: $mobile) {
-            flex-wrap: wrap;
-            margin: 0px 0px 15px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include adaptiveValue("gap", 30, 10, 991.98, 479.98, 1);
+        margin-bottom: rem(15);
+        @media (max-width: $mobileSmall) {
+            grid-template-columns: 1fr;
         }
     }
 
-    &__column {
-        flex: 0 1 33.333%;
-        padding: 0px 15px;
+    &__image-ibg {
         position: relative;
-        margin: 0px 0px 30px 0px;
-        @media (max-width: $mobile) {
-            flex: 1 1 100%;
-            padding: 0;
-        }
-    }
-
-    &__image {
-        padding: 0px 0px 130% 0px;
-        @media (max-width: $mobile) {
-            padding: 0;
-            @include adaptiveValue("height", 400, 200, 1110, 479.98, 1);
+        @include adaptiveValue("height", 450, 250, 1110, 479.98, 1);
+        transition: transform 1s ease 0s, box-shadow 1s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: rem(-30) rem(80) rem(200) rgba(0, 0, 0, 0.25);
+                transform: translate(0px, rem(-20));
+                .explore__gallery-play {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
         }
     }
 
@@ -133,11 +130,11 @@
         left: 50%;
         cursor: pointer;
         transform: translate(-50%, -50%);
-        transition: all 0.3s ease 0s;
-        opacity: 1;
-        visibility: visible;
+        transition: background-color 0.3s ease 0s, opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+        opacity: 0;
+        visibility: hidden;
         &::before {
-            transition: all 0.3s ease 0s;
+            transition: color 0.3s ease 0s;
         }
         @media (any-hover: hover) {
             &:hover {
@@ -152,6 +149,7 @@
     &__bottom {
         display: flex;
         justify-content: space-between;
+        gap: rem(20);
         @media (max-width: $mobile) {
             flex-wrap: wrap;
             justify-content: center;
@@ -159,32 +157,30 @@
     }
 
     &__text {
-        margin: 0px 20px 0px 0px;
-        flex: 0 1 540px;
+        flex: 0 1 rem(540);
         @extend %text;
         opacity: 0.7;
         @media (max-width: $mobile) {
             flex-wrap: wrap;
-            margin: 0px 0px 20px 0px;
             text-align: center;
         }
     }
 
     &__btn {
-        border: 1px solid $secondary_02;
+        border: rem(1) solid $secondary_02;
         background: $secondary_02;
-        height: 50px;
-        padding: 0px 40px;
+        height: rem(50);
+        padding: 0px rem(40);
         @extend %label;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         color: $white;
-        transition: all 0.3s ease 0s;
+        transition: background-color 0.3s ease 0s, border 0.3s ease 0s;
         @media (any-hover: hover) {
             &:hover {
-                border: 1px solid $primary;
-                background: $primary;
+                border: rem(1) solid $primary;
+                background-color: $primary;
             }
         }
 
@@ -198,9 +194,10 @@
 
 .awards {
     &__container {
-        border-top: 1px solid hsla(0, 0%, 13%, 0.2);
+        border-top: rem(1) solid hsla(0, 0%, 13%, 0.2);
         @include adaptiveValue("padding-top", 60, 30, 1110, 479.98, 1);
         display: flex;
+        gap: rem(20);
         justify-content: space-between;
         @media (max-width: $mobile) {
             justify-content: center;
@@ -208,42 +205,28 @@
         }
     }
 
-    &__column {
-        margin: 0px 20px 0px 0px;
-        &:first-child {
-            flex: 0 1 200px;
+    &__subtitle {
+        @media (min-width: $mobile) {
+            flex: 0 1 rem(200);
         }
-        @media (max-width: $mobile) {
-            flex: 1 1 100%;
-            margin: 0px 0px 20px 0px;
-            &:first-child {
-                flex: 1 1 100%;
-                text-align: center;
-            }
-            &:last-child {
-                margin: 0px;
-            }
+        img {
+            max-width: 100%;
         }
     }
 
-    &__subtitle {
-        @extend %title;
+    &__item {
+        @media (min-width: $mobile) {
+            flex: 0 1 rem(635);
+        }
     }
 }
 .awards-item {
-    margin: 0px 0px 0px 20px;
-    flex: 0 1 635px;
-    @media (max-width: $mobile) {
-        flex: 1 1 100%;
-    }
     &__row {
         display: flex;
         justify-content: space-between;
-        @include adaptiveValue("margin-bottom", 60, 20, 1110, 479.98, 1);
-        @media (max-width: $mobile) {
-            &:last-child {
-                margin: 0px 0px 0px 0px;
-            }
+        @include adaptiveValue("gap", 20, 10, 767.98, 479.98, 1);
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 60, 30, 991.98, 479.98, 1);
         }
         @media (max-width: $mobileSmall) {
             flex-wrap: wrap;
@@ -253,20 +236,18 @@
     &__title {
         @extend %subtitle;
         @media (max-width: $mobile) {
-            flex: 0 0 35%;
+            flex: 0 1 35%;
         }
         @media (max-width: $mobileSmall) {
             flex: 1 1 100%;
             text-align: center;
-            margin: 0px 0px 20px 0px;
         }
     }
 
     &__info {
-        flex: 0 1 255px;
-        margin: 0px 20px 0px 85px;
-        @media (max-width: $tablet) {
-            margin: 0px 20px;
+        flex: 0 1 rem(230);
+        @media (min-width: $mobile) {
+            margin-left: rem(65);
         }
         @media (max-width: $mobile) {
             flex: 1 1 auto;
@@ -275,13 +256,12 @@
         @media (max-width: $mobileSmall) {
             flex: 1 1 100%;
             text-align: center;
-            margin: 0px 0px 20px 0px;
         }
     }
 
     &__label {
         @extend %label;
-        @include adaptiveValue("margin-bottom", 15, 10, 1110, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 15, 5, 767.98, 479.98, 1);
     }
 
     &__text {
