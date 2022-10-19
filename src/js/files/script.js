@@ -1,8 +1,3 @@
-// Подключение функционала "Чертогов Фрилансера"
-import { isMobile } from "./functions.js";
-// Подключение списка активных модулей
-import { flsModules } from "./modules.js";
-
 if (document.querySelector("._filter-item")) {
     const filterBox = document.querySelectorAll("._filter-item");
     const links = document.querySelectorAll(".works__link");
