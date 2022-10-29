@@ -17,7 +17,7 @@ A fully responsive Design Services landing page and Blog page. All elements of t
 
 ### External Links
 
-*   [Blog Page](https://pet-gravity.web.app/)
+*   [Home Page](https://pet-gravity.web.app/)
 *   [Blog Page](https://pet-gravity.web.app/blog.html)
 
 ### Built Date
